@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDERCO S.A. | Productos</title>
-    <meta name="description" content="Productos de INDERCO S.A. - Tecnología apícola industrial.">
+    <title>INDERCO S.A. | Todos los Productos</title>
+    <meta name="description" content="Catálogo completo de productos INDERCO S.A. - Tecnología apícola industrial.">
+    <link rel="icon" type="image/png" href="img/ICON.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="img/ICON.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,7 +20,7 @@
         <nav class="nav-contenedor">
             <a href="index.html" class="logo">
                 <img src="img/ICON.png" alt="INDERCO Logo" style="height: 40px; width: auto; margin-right: 10px;">
-                <span style="color: #93D94E;">IND</span> <span style="color: #6B7280;">ERCO</span>
+                <span style="color: #93D94E;">IND</span> <span style="color: #6B7280;">ERCO S.A.</span>
             </a>
             <div class="menu-toggle" id="menu-toggle">&#9776;</div>
             <ul class="menu-navegacion" id="menu-navegacion">
@@ -35,21 +35,33 @@
                     </ul>
                 </li>
                 <li><a href="index.html#industria40">Industria 4.0</a></li>
-                <li><a href="index.html#contacto">Contacto Comercial</a></li>
-                <li><a href="index.html#contacto" class="btn-principal"
+                <li><a href="contacto.html">Contacto Comercial</a></li>
+                <li><a href="contacto.html" class="btn-principal"
                         style="padding: 10px 20px; font-size: 0.8rem;">Presupuesto</a></li>
             </ul>
         </nav>
     </header>
 
-    <section style="margin-top: 80px;">
-        <img src="img/productosbanner.png" alt="Productos INDERCO"
-            style="width: 100%; display: block; height: auto;">
-    </section>
+
 
     <section class="contenedor">
-        <h2 class="titulo-seccion">Nuestros Productos</h2>
-        <div class="grid-maquinas" id="grid-maquinas"></div>
+        <h2 class="titulo-seccion">Extracción — Apicultores Industriales</h2>
+        <div class="grid-maquinas" id="grid-extraccion"></div>
+    </section>
+
+    <section class="contenedor" style="padding-top: 0;">
+        <h2 class="titulo-seccion">Extracción — Medianos y Pequeños Apicultores</h2>
+        <div class="grid-maquinas" id="grid-extraccion-pequenos"></div>
+    </section>
+
+    <section class="contenedor" style="padding-top: 0;">
+        <h2 class="titulo-seccion">Fraccionado de Miel</h2>
+        <div class="grid-maquinas" id="grid-fraccionado"></div>
+    </section>
+
+    <section class="contenedor" style="padding-top: 0;">
+        <h2 class="titulo-seccion">Accesorios</h2>
+        <div class="grid-maquinas" id="grid-accesorios"></div>
     </section>
 
     <footer class="pie-pagina">
@@ -58,7 +70,6 @@
         </div>
     </footer>
 
-    <!-- Modal de Información del Producto -->
     <div id="modalProducto" class="modal">
         <div class="modal-contenido">
             <span class="modal-cerrar">&times;</span>
@@ -80,120 +91,107 @@
     </div>
 
     <script src="app.js"></script>
+    <script src="data-extraccion.js"></script>
+    <script src="data-fraccionado.js"></script>
+    <script src="data-accesorios.js"></script>
     <script>
-        const productosProductos = {
-            "1.jpg": { titulo: "", modelo: "", funcion: "", descripcionFuncionamiento: "", descripcionEquipo: "", especificacionesTecnicas: [] },
-            "2.jpg": { titulo: "", modelo: "", funcion: "", descripcionFuncionamiento: "", descripcionEquipo: "", especificacionesTecnicas: [] },
-            "3.jpg": { titulo: "", modelo: "", funcion: "", descripcionFuncionamiento: "", descripcionEquipo: "", especificacionesTecnicas: [] },
-            "4.jpg": { titulo: "", modelo: "", funcion: "", descripcionFuncionamiento: "", descripcionEquipo: "", especificacionesTecnicas: [] },
-            "5.jpg": { titulo: "", modelo: "", funcion: "", descripcionFuncionamiento: "", descripcionEquipo: "", especificacionesTecnicas: [] },
-            "6.jpg": { titulo: "", modelo: "", funcion: "", descripcionFuncionamiento: "", descripcionEquipo: "", especificacionesTecnicas: [] },
-            "7.jpg": { titulo: "", modelo: "", funcion: "", descripcionFuncionamiento: "", descripcionEquipo: "", especificacionesTecnicas: [] },
-            "8.jpg": { titulo: "", modelo: "", funcion: "", descripcionFuncionamiento: "", descripcionEquipo: "", especificacionesTecnicas: [] },
-            "9.jpg": { titulo: "", modelo: "", funcion: "", descripcionFuncionamiento: "", descripcionEquipo: "", especificacionesTecnicas: [] },
-            "10.jpg": { titulo: "", modelo: "", funcion: "", descripcionFuncionamiento: "", descripcionEquipo: "", especificacionesTecnicas: [] }
-        };
+        var registro = {};
 
-        // Función para abrir modal
-        function abrirModal(nombreImagen) {
-            const modal = document.getElementById('modalProducto');
-            const modalImagen = document.getElementById('modalImagen');
-            const modalTitulo = document.getElementById('modalTitulo');
-            const modalDescripcion = document.getElementById('modalDescripcion');
-            const btnContacto = document.getElementById('btnContactoModal');
-
-            const producto = productosProductos[nombreImagen];
-            const rutaImagen = `img/productos/${nombreImagen}`;
-
-            modalImagen.src = rutaImagen;
-            modalImagen.alt = producto.titulo;
-            modalTitulo.textContent = producto.titulo;
-
-            let contenido = '';
-
-            if (producto.descripcionEquipo) {
-                contenido += `<div class="seccion-modal descripcion-equipo">
-                    <p>${producto.descripcionEquipo}</p>
-                </div>`;
-            }
-
-            contenido += `<div class="seccion-modal">
-                <h4>MODELO</h4>
-                <p>${producto.modelo}</p>
-            </div>`;
-
-            contenido += `<div class="seccion-modal">
-                <h4>FUNCIÓN</h4>
-                <p>${producto.funcion}</p>
-            </div>`;
-
-            if (producto.descripcionFuncionamiento) {
-                contenido += `<div class="seccion-modal">
-                    <h4>DESCRIPCIÓN DEL FUNCIONAMIENTO</h4>
-                    <p>${producto.descripcionFuncionamiento}</p>
-                </div>`;
-            }
-
-            if (producto.especificacionesTecnicas && producto.especificacionesTecnicas.length > 0) {
-                contenido += `<div class="seccion-modal">
-                    <h4>ESPECIFICACIONES TÉCNICAS</h4>
-                    <ul class="especificaciones">
-                        ${producto.especificacionesTecnicas.map(spec => `<li>${spec}</li>`).join('')}
-                    </ul>
-                </div>`;
-            }
-
-            modalDescripcion.innerHTML = contenido;
-
-            const telefonoWhatsApp = '+542344427549';
-            const mensajeWhatsApp = `Hola, me interesa consultar sobre: ${producto.titulo} (Modelo: ${producto.modelo}). ¿Podrían proporcionarme información y presupuesto?`;
-            btnContacto.href = `https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(mensajeWhatsApp)}`;
-
-            modal.style.display = 'block';
+        function poblarRegistro(data, carpeta) {
+            Object.keys(data).forEach(function (img) {
+                registro[carpeta + '/' + img] = data[img];
+            });
         }
 
-        // Función para cerrar modal
-        document.addEventListener('DOMContentLoaded', () => {
-            const modal = document.getElementById('modalProducto');
-            const span = document.getElementsByClassName('modal-cerrar')[0];
+        poblarRegistro(window.dataExtraccion, 'extraccion');
+        poblarRegistro(window.dataExtraccionPequenos, 'extraccion');
+        poblarRegistro(window.dataFraccionado, 'fraccionado');
+        poblarRegistro(window.dataAccesorios, 'accesorios');
 
-            span.onclick = function () {
-                modal.style.display = 'none';
+        function abrirModal(clave) {
+            var producto = registro[clave];
+            if (!producto) return;
+            var partes = clave.split('/');
+            var carpeta = partes[0];
+            var img = partes[1];
+            var ruta = 'img/' + carpeta + '/' + img;
+
+            document.getElementById('modalImagen').src = ruta;
+            document.getElementById('modalImagen').alt = producto.titulo;
+            document.getElementById('modalTitulo').textContent = producto.titulo;
+
+            var contenido = '';
+            if (producto.descripcionEquipo) {
+                contenido += '<div class="seccion-modal descripcion-equipo"><p>' + producto.descripcionEquipo +
+                    '</p></div>';
+            }
+            if (producto.modelo) {
+                contenido += '<div class="seccion-modal"><h4>MODELO</h4><p>' + producto.modelo + '</p></div>';
+            }
+            if (producto.funcion) {
+                contenido += '<div class="seccion-modal"><h4>FUNCIÓN</h4><p>' + producto.funcion + '</p></div>';
+            }
+            if (producto.descripcionFuncionamiento) {
+                contenido += '<div class="seccion-modal"><h4>DESCRIPCIÓN DE FUNCIONAMIENTO</h4><p>' + producto
+                    .descripcionFuncionamiento + '</p></div>';
+            }
+            if (producto.especificacionesTecnicas && producto.especificacionesTecnicas.length > 0) {
+                contenido +=
+                    '<div class="seccion-modal"><h4>ESPECIFICACIONES TÉCNICAS</h4><ul class="especificaciones">';
+                producto.especificacionesTecnicas.forEach(function (s) {
+                    contenido += '<li>' + s + '</li>';
+                });
+                contenido += '</ul></div>';
             }
 
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            }
+            document.getElementById('modalDescripcion').innerHTML = contenido;
+
+            var tel = '+542344427549';
+            var msg = 'Hola, me interesa consultar sobre: ' + producto.titulo +
+                (producto.modelo ? ' (Modelo: ' + producto.modelo + ')' : '') +
+                '. ¿Podrían proporcionarme información y presupuesto?';
+            document.getElementById('btnContactoModal').href =
+                'https://wa.me/' + tel + '?text=' + encodeURIComponent(msg);
+
+            document.getElementById('modalProducto').style.display = 'block';
+        }
+
+        document.querySelector('.modal-cerrar').addEventListener('click', function () {
+            document.getElementById('modalProducto').style.display = 'none';
+        });
+        window.addEventListener('click', function (e) {
+            var modal = document.getElementById('modalProducto');
+            if (e.target === modal) modal.style.display = 'none';
         });
 
-        // Cargar productos dinámicamente
-        document.addEventListener('DOMContentLoaded', () => {
-            const gridMaquinas = document.getElementById('grid-maquinas');
-
-            Object.keys(productosProductos).forEach(nombreImagen => {
-                const producto = productosProductos[nombreImagen];
-                const rutaImagen = `img/productos/${nombreImagen}`;
-
-                const tarjeta = document.createElement('div');
+        function generarGrilla(data, carpeta, gridId) {
+            var grid = document.getElementById(gridId);
+            Object.keys(data).forEach(function (img) {
+                var producto = data[img];
+                if (!producto.titulo) return;
+                var ruta = 'img/' + carpeta + '/' + img;
+                var clave = carpeta + '/' + img;
+                var tarjeta = document.createElement('div');
                 tarjeta.className = 'tarjeta-maquina';
-                tarjeta.innerHTML = `
-                    <div class="imagen-maquina">
-                        <img src="${rutaImagen}" alt="${producto.titulo}">
-                    </div>
-                    <div class="producto-contenido">
-                        <h3 class="producto-titulo">${producto.titulo}</h3>
-                        <p class="producto-modelo"><strong>Modelo:</strong> ${producto.modelo}</p>
-                        <p class="producto-funcion"><strong>Función:</strong> ${producto.funcion}</p>
-                    </div>
-                    <button class="btn-mas-informacion" onclick="abrirModal('${nombreImagen}')">
-                        <i class="fas fa-info-circle"></i> Más Información
-                    </button>
-                `;
-                gridMaquinas.appendChild(tarjeta);
+                tarjeta.innerHTML =
+                    '<div class="imagen-maquina"><img src="' + ruta + '" alt="' + producto.titulo + '"></div>' +
+                    '<div class="producto-contenido">' +
+                    '<h3 class="producto-titulo">' + producto.titulo + '</h3>' +
+                    '<p class="producto-modelo"><strong>Modelo:</strong> ' + (producto.modelo || '—') + '</p>' +
+                    '<p class="producto-funcion"><strong>Función:</strong> ' + (producto.funcion || '') +
+                    '</p>' +
+                    '</div>' +
+                    '<button class="btn-mas-informacion" onclick="abrirModal(\'' + clave + '\')">' +
+                    '<i class="fas fa-info-circle"></i> Más Información' +
+                    '</button>';
+                grid.appendChild(tarjeta);
             });
-        });
+        }
+
+        generarGrilla(window.dataExtraccion, 'extraccion', 'grid-extraccion');
+        generarGrilla(window.dataExtraccionPequenos, 'extraccion', 'grid-extraccion-pequenos');
+        generarGrilla(window.dataFraccionado, 'fraccionado', 'grid-fraccionado');
+        generarGrilla(window.dataAccesorios, 'accesorios', 'grid-accesorios');
     </script>
 </body>
 
