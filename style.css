@@ -1229,6 +1229,7 @@ ul {
     /* ---- Botones hero ---- */
     .hero-botones {
         bottom: 10% !important;
+        flex-wrap: nowrap !important;
     }
 
     .hero-botones .btn-principal,
@@ -1351,6 +1352,10 @@ ul {
     }
 
     /* ---- Botones hero ---- */
+    .hero-botones {
+        flex-wrap: nowrap !important;
+    }
+
     .btn-principal,
     .btn-secundario {
         padding: 12px 20px;
