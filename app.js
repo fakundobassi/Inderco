@@ -1,53 +1,60 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // 1. Menú móvil — hamburguesa
     const menuToggle = document.getElementById('menu-toggle');
     const menuNavegacion = document.getElementById('menu-navegacion');
 
     if (menuToggle && menuNavegacion) {
 
-        // Abrir/cerrar menú principal
-        menuToggle.addEventListener('click', () => {
+        menuToggle.addEventListener('click', function() {
             menuNavegacion.classList.toggle('activo');
         });
 
-        // Toggle de submenús en móvil
-        document.querySelectorAll('.dropdown > a').forEach(dropdownLink => {
-            dropdownLink.addEventListener('click', (e) => {
-                if (window.innerWidth <= 900) {
+        // Submenú en móvil
+        var dropdownLinks = document.querySelectorAll('.dropdown > a');
+        dropdownLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    e.stopPropagation();
-                    const dropdown = dropdownLink.parentElement;
-                    // Cierra otros dropdowns abiertos
-                    document.querySelectorAll('.dropdown').forEach(d => {
-                        if (d !== dropdown) d.classList.remove('activo');
+                    var dropdown = link.parentElement;
+                    var abierto = dropdown.classList.contains('activo');
+                    document.querySelectorAll('.dropdown').forEach(function(d) {
+                        d.classList.remove('activo');
                     });
-                    dropdown.classList.toggle('activo');
+                    if (!abierto) {
+                        dropdown.classList.add('activo');
+                    }
                 }
             });
         });
 
-        // Cierra el menú al tocar un enlace final (no dropdown)
-        document.querySelectorAll('.submenu a, .menu-navegacion > li:not(.dropdown) > a').forEach(enlace => {
-            enlace.addEventListener('click', () => {
+        // Cerrar al tocar enlace final
+        var enlacesCierre = document.querySelectorAll('.submenu a, .menu-navegacion > li:not(.dropdown) > a');
+        enlacesCierre.forEach(function(enlace) {
+            enlace.addEventListener('click', function() {
                 menuNavegacion.classList.remove('activo');
-                document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('activo'));
+                document.querySelectorAll('.dropdown').forEach(function(d) {
+                    d.classList.remove('activo');
+                });
             });
         });
     }
 
-    // 2. Sombra en navbar al hacer scroll
-    const cabecera = document.getElementById('cabecera');
+    // Sombra navbar en scroll
+    var cabecera = document.getElementById('cabecera');
     if (cabecera) {
-        window.addEventListener('scroll', () => {
-            cabecera.classList.toggle('scrolled', window.scrollY > 50);
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                cabecera.classList.add('scrolled');
+            } else {
+                cabecera.classList.remove('scrolled');
+            }
         });
     }
 
-    // 3. Formulario de contacto (solo si existe en la página)
-    const form = document.getElementById('form-contacto');
+    // Formulario
+    var form = document.getElementById('form-contacto');
     if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Gracias por su consulta. Un representante de INDERCO S.A. se pondrá en contacto a la brevedad.');
             form.reset();
@@ -56,13 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Carrusel
-let slideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const indicadores = document.querySelectorAll('.indicador');
+var slideIndex = 0;
+var slides = document.querySelectorAll('.slide');
+var indicadores = document.querySelectorAll('.indicador');
 
 function mostrarSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    indicadores.forEach(ind => ind.classList.remove('active'));
+    slides.forEach(function(s) { s.classList.remove('active'); });
+    indicadores.forEach(function(i) { i.classList.remove('active'); });
     if (slides[index]) slides[index].classList.add('active');
     if (indicadores[index]) indicadores[index].classList.add('active');
 }
@@ -79,17 +86,16 @@ function irASlide(n) {
 
 if (slides.length > 0) {
     mostrarSlide(slideIndex);
-    let autoPlay = setInterval(() => cambiarSlide(1), 5000);
-    const carrusel = document.querySelector('.carrusel');
+    var autoPlay = setInterval(function() { cambiarSlide(1); }, 5000);
+    var carrusel = document.querySelector('.carrusel');
     if (carrusel) {
-        carrusel.addEventListener('mouseenter', () => clearInterval(autoPlay));
-        carrusel.addEventListener('mouseleave', () => {
-            autoPlay = setInterval(() => cambiarSlide(1), 5000);
+        carrusel.addEventListener('mouseenter', function() { clearInterval(autoPlay); });
+        carrusel.addEventListener('mouseleave', function() {
+            autoPlay = setInterval(function() { cambiarSlide(1); }, 5000);
         });
     }
 }
 
-// AOS (solo si está disponible)
 if (typeof AOS !== 'undefined') {
     AOS.init({ duration: 800, once: true, offset: 100 });
 }
