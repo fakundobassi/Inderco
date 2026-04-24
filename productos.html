@@ -36,8 +36,8 @@
                 </li>
                 <li><a href="index.html#industria40">Industria 4.0</a></li>
                 <li><a href="contacto.html">Contacto Comercial</a></li>
-                <li><a href="contacto.html" class="btn-principal"
-                        style="padding: 10px 20px; font-size: 0.8rem;">Presupuesto</a></li>
+                <li><a href="https://fakundobassi.github.io/beedolce/" class="btn-principal"
+                        style="padding: 10px 20px; font-size: 0.8rem; ">Conoce BeeDolce</a></li>
             </ul>
         </nav>
     </header>
@@ -117,9 +117,11 @@
             var ruta = 'img/' + carpeta + '/' + img;
 
             var contenedorMod = document.getElementById('modalCarruselContenedor');
-            var imagenesMod = producto.imagenes
-                ? producto.imagenes.map(function (i) { return 'img/' + carpeta + '/' + i; })
-                : [ruta];
+            var imagenesMod = producto.imagenes ?
+                producto.imagenes.map(function (i) {
+                    return 'img/' + carpeta + '/' + i;
+                }) :
+                [ruta];
             contenedorMod.innerHTML = '';
             contenedorMod.appendChild(crearCarrusel(imagenesMod, producto.titulo));
             document.getElementById('modalTitulo').textContent = producto.titulo;
@@ -175,20 +177,30 @@
                 if (!producto.titulo) return;
                 var ruta = 'img/' + carpeta + '/' + img;
                 var clave = carpeta + '/' + img;
-                var mensajeWA = encodeURIComponent('Hola, me interesa consultar sobre: ' + producto.titulo + (producto.modelo ? ' (Modelo: ' + producto.modelo + ')' : '') + '. ¿Podrían proporcionarme información y presupuesto?');
+                var mensajeWA = encodeURIComponent('Hola, me interesa consultar sobre: ' + producto.titulo + (
+                        producto.modelo ? ' (Modelo: ' + producto.modelo + ')' : '') +
+                    '. ¿Podrían proporcionarme información y presupuesto?');
                 var urlWA = 'https://wa.me/542344427549?text=' + mensajeWA;
                 var tarjeta = document.createElement('div');
                 tarjeta.className = 'tarjeta-maquina';
-                tarjeta.addEventListener('click', (function (c) { return function () { abrirModal(c); }; })(clave));
-                var imagenes = producto.imagenes
-                    ? producto.imagenes.map(function (i) { return 'img/' + carpeta + '/' + i; })
-                    : [ruta];
+                tarjeta.addEventListener('click', (function (c) {
+                    return function () {
+                        abrirModal(c);
+                    };
+                })(clave));
+                var imagenes = producto.imagenes ?
+                    producto.imagenes.map(function (i) {
+                        return 'img/' + carpeta + '/' + i;
+                    }) :
+                    [ruta];
                 tarjeta.appendChild(crearCarrusel(imagenes, producto.titulo));
                 tarjeta.insertAdjacentHTML('beforeend',
                     '<div class="producto-contenido">' +
                     '<h3 class="producto-titulo">' + producto.titulo + '</h3>' +
-                    '<p class="producto-modelo"><strong>Modelo:</strong> ' + (producto.modelo || '—') + '</p>' +
-                    '<p class="producto-funcion"><strong>Función:</strong> ' + (producto.funcion || '') + '</p>' +
+                    '<p class="producto-modelo"><strong>Modelo:</strong> ' + (producto.modelo || '—') +
+                    '</p>' +
+                    '<p class="producto-funcion"><strong>Función:</strong> ' + (producto.funcion || '') +
+                    '</p>' +
                     '</div>' +
                     '<button class="btn-mas-informacion">' +
                     '<i class="fas fa-info-circle"></i> Más Información' +
@@ -196,7 +208,9 @@
                     '<a class="btn-whatsapp" href="' + urlWA + '" target="_blank">' +
                     '<i class="fab fa-whatsapp"></i> Contactar por WhatsApp' +
                     '</a>');
-                tarjeta.querySelector('.btn-whatsapp').addEventListener('click', function (e) { e.stopPropagation(); });
+                tarjeta.querySelector('.btn-whatsapp').addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
                 grid.appendChild(tarjeta);
             });
         }
