@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDERCO S.A. | Extracción de Miel</title>
+    <meta name="description" content="Equipos de extracción de miel de INDERCO S.A. - Tecnología apícola industrial.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecera" id="cabecera">
+        <nav class="nav-contenedor">
+            <a href="index.html" class="logo">
+                <img src="img/ICON.png" alt="INDERCO Logo" style="height: 40px; width: auto; margin-right: 10px;">
+                <span style="color: #93D94E;">IND</span> <span style="color: #6B7280;">ERCO</span>
+            </a>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="menu-navegacion" id="menu-navegacion">
+                <li><a href="index.html#nosotros">La Empresa</a></li>
+                <li class="dropdown">
+                    <a href="index.html#soluciones">Productos</a>
+                    <ul class="submenu">
+                        <li><a href="extraccion.html">Extracción de miel</a></li>
+                        <li><a href="fraccionado.html">Fraccionado de miel</a></li>
+                        <li><a href="homogenizado.html">Homogeneizado de miel</a></li>
+                        <li><a href="accesorios.html">Accesorios</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#industria40">Industria 4.0</a></li>
+                <li><a href="index.html#contacto">Contacto Comercial</a></li>
+                <li><a href="index.html#contacto" class="btn-principal"
+                        style="padding: 10px 20px; font-size: 0.8rem;">Presupuesto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section style="margin-top: 80px;">
+        <img src="img/extraccionbanner.png" alt="Extracción de Miel" style="width: 100%; display: block; height: auto;">
+    </section>
+
+    <section class="contenedor">
+        <h2 class="titulo-seccion">Para Apicultores Industriales</h2>
+        <div class="grid-maquinas" id="grid-maquinas"></div>
+    </section>
+
+    <section class="contenedor">
+        <h2 class="titulo-seccion">Para Medianos y Pequeños Apicultores</h2>
+        <div class="grid-maquinas" id="grid-maquinas-pequenos"></div>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor pie-cont">
+            <p>&copy; 2024 INDERCO S.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Información del Producto -->
+    <div id="modalProducto" class="modal">
+        <div class="modal-contenido">
+            <span class="modal-cerrar">&times;</span>
+            <div class="modal-body">
+                <div class="modal-imagen-principal">
+                    <img id="modalImagen" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitulo"></h2>
+                    <div id="modalDescripcion"></div>
+                    <div class="modal-acciones">
+                        <a id="btnContactoModal" href="#" class="btn-contacto">
+                            <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // productos para apicultores industriales
+        const productosExtraccion = {
+            "1.jpg": {
+                titulo: "DESOPERCULADORA ELÉCTRICA (DAER)",
+                modelo: "DAER",
+                funcion: "Cortar el opérculo excedente del panal para facilitar la salida de la miel contenida en su interior.",
+                descripcionFuncionamiento: "Los cuadros se introducen manualmente al sistema de transmisión automática a través de una boca de entrada situada en la parte superior del equipo. Estos cuadros son transportados, por medio de una barra acarreadora, entre dos cuchillas calefaccionadas que separan el opérculo de las dos caras del panal al mismo tiempo. Luego, los cuadros son derivados entre dos peines de acero inoxidable, calentados mediante resistencia eléctrica, cuya función es cepillar los panales y separar el opérculo que aún pudieran contener, asegurando un desoperculado mucho más eficiente. Una vez concluido este proceso, los cuadros son expulsados por la parte inferior del equipo, desde donde son retirados para su colocación en el extractor de miel.",
+                descripcionEquipo: "Este dispositivo está fabricado en acero inoxidable AISI 304 (grado alimenticio) y cuenta con un sistema de transmisión por medio de cadenas y engranajes del mismo material, accionados por un motor eléctrico con 1/2 HP de potencia. Este motor, que opera con una tensión de 220V monofásica/bifásica, posee una caja reductora con embrague y llave de marcha y reversa. Las cadenas trabajan sobre guías de teflón para evitar el desgaste. El sistema de calentamiento de las cuchillas y de los peines es eléctrico, mediante resistencias, y es comandado por un controlador electrónico que permite setear manualmente la temperatura de trabajo deseada, de manera independiente tanto para las cuchillas como para los peines. El equipo posee 4 velocidades de operación, ajustables manualmente, y le brinda una capacidad de trabajo de entre 300 y 1.200 cuadros por hora.",
+                especificacionesTecnicas: [
+                    "Largo: 485 mm. (Sin guías de salida)",
+                    "Ancho: 970 mm.",
+                    "Alto: 840 mm.",
+                    "Peso: 73 Kg.",
+                    "Fase/Tensión: Monofásica-bifásica. (220v)",
+                    "Potencia: 1/2 HP.",
+                    "Consumo: 14 Amperes.",
+                    "Capacidad de trabajo: De 300 a 1200 cuadros/hora."
+                ]
+            },
+            "2.jpg": {
+                titulo: "DESOPERCULADORA ELÉCTRICA (DAE)",
+                modelo: "DAE",
+                funcion: "Cortar el opérculo excedente del panal para facilitar la salida de la miel contenida en su interior.",
+                descripcionFuncionamiento: "Los cuadros se introducen manualmente al sistema de transmisión automática a través de una boca de entrada situada en la parte superior del equipo. Estos cuadros son transportados, por medio de una barra acarreadora, entre dos cuchillas calefaccionadas que separan el opérculo de las dos caras del panal al mismo tiempo. Una vez concluido este proceso, los cuadros son expulsados por la parte inferior del equipo, desde donde son retirados para su colocación en el extractor de miel.",
+                descripcionEquipo: "Este dispositivo está fabricado en acero inoxidable AISI 304 (grado alimenticio) y cuenta con un sistema de transmisión por medio de cadenas y engranajes del mismo material, accionados por un motor eléctrico con 1/2 HP de potencia. Este motor, que opera con una tensión de 220V monofásica/bifásica, posee una caja reductora con embrague y llave de marcha y reversa. El sistema de calentamiento de las cuchillas es eléctrico, mediante resistencias, y es comandado por un controlador electrónico que permite configurar manualmente la temperatura de trabajo deseada. El equipo posee 4 velocidades de operación, ajustables manualmente, y le brinda una capacidad de trabajo de entre 300 y 1.200 cuadros por hora.",
+                especificacionesTecnicas: [
+                    "Largo: 485 mm. (Sin guías de salida)",
+                    "Ancho: 970 mm.",
+                    "Alto: 840 mm.",
+                    "Peso: 72 Kg.",
+                    "Fase/Tensión: Monofásica-bifásica. (220v)",
+                    "Potencia: 1/2 HP.",
+                    "Consumo: 10 Amperes.",
+                    "Capacidad de trabajo: De 300 a 1200 cuadros/hora."
+                ]
+            },
+            "3.jpg": {
+                titulo: "PRENSA DE OPÉRCULO (MC)",
+                modelo: "PRMC",
+                funcion: "Tratamiento del opérculo para separación de cera y miel, mediante compresión y sin aplicación de temperatura.",
+                descripcionFuncionamiento: "El opérculo resultante del proceso de desoperculado cae desde la Desoperculadora hacia la malla de filtrado que posee la Prensa de Opérculo en su parte superior. En esta malla perforada de acero inoxidable se efectúa una primera separación de cera y miel, por medio de gravedad. El opérculo restante es empujado manualmente mediante el uso de una pala de acero inoxidable hacia una boca de entrada en cuyo interior se encuentra el tornillo sinfín de paso progresivo, que arrastra y comprime el opérculo para efectuar la separación final de la miel y de la cera. La cera, comprimida por el sinfín, sale al exterior en estado sólido a través de una boca de salida de calibre regulable situada en su extremo, mientras que la miel cae por gravedad hacia una fosa recolectora. Este método de tratamiento del opérculo es efectuado sin la intervención de temperatura, y de manera continua.",
+                descripcionEquipo: "Este dispositivo está fabricado en acero inoxidable AISI 304 (grado alimenticio) y opera gracias a un motor eléctrico de 2 HP. Posee un controlador electrónico de velocidad de rotación del sistema de compresión, y cuenta con un tablero de comando con protecciones eléctricas. Su performance es de hasta 300 cuadros/hora. El equipo incluye, además, una base de apoyo para Desoperculadora INDERCO®, y se comercializa acompañado de 1 pala de acero inoxidable para empuje de opérculo y de 1 recipiente de acero inoxidable para recolección de cera.",
+                especificacionesTecnicas: [
+                    "Largo: 1200 mm.",
+                    "Ancho: 1200 mm.",
+                    "Alto: 700 mm.",
+                    "Peso: 115 Kg.",
+                    "Fase/Tensión: Trifásica (380v) – Monofásica (220v)",
+                    "Potencia: 2 HP.",
+                    "Capacidad de trabajo: Hasta 300 cuadros/hora."
+                ]
+            },
+            "4.jpg": {
+                titulo: "PRENSA DE OPERCULO (MG)",
+                modelo: "MG",
+                funcion: "Tratamiento del opérculo para separación de cera y miel, mediante compresión y sin aplicación de temperatura.",
+                descripcionFuncionamiento: "El opérculo resultante del proceso de desoperculado cae desde la Desoperculadora hacia la malla de filtrado que posee la Prensa de Opérculo en su parte superior. En esta malla perforada de acero inoxidable se efectúa una primera separación de cera y miel, por medio de gravedad. El opérculo restante es empujado manualmente mediante el uso de una pala de acero inoxidable hacia una boca de entrada en cuyo interior se encuentra el tornillo sinfín de paso progresivo, que arrastra y comprime el opérculo para efectuar la separación final de la miel y de la cera. La cera, comprimida por el sinfín, sale al exterior en estado sólido a través de una boca de salida de calibre regulable situada en su extremo, mientras que la miel cae por gravedad hacia una fosa recolectora. Este método de tratamiento del opérculo es efectuado sin la intervención de temperatura, y de manera continua.",
+                descripcionEquipo: "Este dispositivo está fabricado en acero inoxidable AISI 304 (grado alimenticio) y opera gracias a un motor eléctrico de 3 HP. Posee un controlador electrónico de velocidad de rotación del sistema de compresión, y cuenta con un tablero de comando con protecciones eléctricas. Su performance es de hasta 550 cuadros/hora. El equipo incluye, además, una base de apoyo para Desoperculadora INDERCO®, y se comercializa acompañado de 1 pala de acero inoxidable para empuje de opérculo y de 1 recipiente de acero inoxidable para recolección de cera.",
+                especificacionesTecnicas: [
+                    "Largo: 1700 mm.",
+                    "Ancho: 1500 mm.",
+                    "Alto: 700 mm.",
+                    "Peso: 135 Kg.",
+                    "Fase/Tensión: Trifásica (380v) Monofásica (220v)",
+                    "Potencia: 3 HP.",
+                    "Capacidad de trabajo: Hasta 550 cuadros/hora."
+                ]
+            },
+            "5.jpg": {
+                titulo: "FUNDIDOR DE OPÉRCULO (MC)",
+                modelo: "BFMC",
+                funcion: "Separación de miel y cera por medio de aplicación de temperatura y derretimiento del opérculo.",
+                descripcionFuncionamiento: "El opérculo resultante del proceso de desoperculado cae desde la Desoperculadora hacia el Fundidor de Opérculo, que posee en su parte superior un conjunto de tubos calefaccionados gracias a un circuito cerrado de agua caliente con temperatura regulable. El opérculo se funde cuando entra en contacto con estos tubos, produciéndose la separación entre la cera y la miel. Por diferencia de densidades, la miel líquida se acumula en el fondo de la batea, mientras que la cera, con un peso específico menor, flota sobre la miel, en la parte superior de la batea. En este proceso, la evacuación de la miel es constante, mientras que la salida de la cera puede ser regulada.",
+                descripcionEquipo: "El Fundidor de Opérculo está fabricado en acero inoxidable AISI 304 (grado alimenticio). Incluye 1 (una) caldera alimentada a gas natural ó envasado (a elección) con corte eléctrico automático, y 1 (una) bomba para recirculado del agua caliente. Cuenta con un sistema electrónico de regulación de temperatura totalmente automatizado, que evita el oscurecimiento de la miel. Posee, además, una base de apoyo para Desoperculadora INDERCO®. La parrilla de recirculación de agua caliente está construida con tubos de 32 mm de diametro y es rebatible para facilitar la limpieza del equipo. La capacidad de trabajo prevista es de hasta 500 cuadros por hora. Incluye 1 (un) recipiente de acero inoxidable para recolección de cera fundida.",
+                especificacionesTecnicas: [
+                    "Largo: 1180 mm.",
+                    "Ancho: 760 mm.",
+                    "Alto: 770 mm.",
+                    "Alimentación de caldera: Gas envasado o Natural.",
+                    "Fase/Tensión: Trifásica (380v) – Monofásica (220v).",
+                    "Potencia bomba: 1/2 HP de 1500 RPM.",
+                    "Capacidad de trabajo: Hasta 500 cuadros/hora."
+                ]
+            },
+            "6.jpg": {
+                titulo: "FUNDIDOR DE OPÉRCULO (MG)",
+                modelo: "BFMG",
+                funcion: "Separación de miel y cera por medio de aplicación de temperatura y derretimiento del opérculo.",
+                descripcionFuncionamiento: "El opérculo resultante del proceso de desoperculado cae desde la Desoperculadora hacia el Fundidor de Opérculo, que posee en su parte superior un conjunto de tubos calefaccionados gracias a un circuito cerrado de agua caliente con temperatura regulable. El opérculo se funde cuando entra en contacto con estos tubos, produciéndose la separación entre la cera y la miel. Por diferencia de densidades, la miel líquida se acumula en el fondo de la batea, mientras que la cera, con un peso específico menor, flota sobre la miel, en la parte superior de la batea. En este proceso, la evacuación de la miel es constante, mientras que la salida de la cera puede ser regulada.",
+                descripcionEquipo: "El Fundidor de Opérculo está fabricado en acero inoxidable AISI 304 (grado alimenticio). Incluye 1 (una) caldera alimentada a gas natural ó envasado (a elección) con corte eléctrico automático, y 1 (una) bomba para recirculado del agua caliente. Cuenta con un sistema electrónico de regulación de temperatura totalmente automatizado, que evita el oscurecimiento de la miel. Posee, además, una base de apoyo para Desoperculadora INDERCO®. La parrilla de tubos de recirculación de agua caliente es rebatible, para facilitar la limpieza del equipo. La capacidad de trabajo prevista es de hasta 800 cuadros por hora. Incluye 1 (un) recipiente de acero inoxidable para recolección de cera fundida.",
+                especificacionesTecnicas: [
+                    "Largo: 1700 mm.",
+                    "Ancho: 760 mm.",
+                    "Alto: 770 mm.",
+                    "Alimentación de caldera: Gas envasado o Natural.",
+                    "Fase/Tensión: Trifásica (380v) – Monofásica (220v).",
+                    "Potencia bomba: 1/2 HP de 1500 RPM.",
+                    "Capacidad de trabajo: Hasta 800 cuadros/hora."
+                ]
+            },
+            "7.jpg": {
+                titulo: "FUNDIDOR DE OPÉRCULO ELÉCTRICO (MC)",
+                modelo: "BFEMC",
+                funcion: "Separación de miel y cera por medio de aplicación de temperatura y derretimiento del opérculo.",
+                descripcionFuncionamiento: "El opérculo resultante del proceso de desoperculado cae desde la Desoperculadora hacia el Fundidor de Opérculo, que posee en su parte superior un conjunto de tubos calefaccionados gracias a un circuito cerrado de agua caliente con temperatura regulable. El opérculo se funde cuando entra en contacto con estos tubos, produciéndose la separación entre la cera y la miel. Por diferencia de densidades, la miel líquida se acumula en el fondo de la batea, mientras que la cera, con un peso específico menor, flota sobre la miel, en la parte superior de la batea. En este proceso, la evacuación de la miel es constante, mientras que la salida de la cera puede ser regulada.",
+                descripcionEquipo: "El Fundidor de Opérculo está fabricado en acero inoxidable AISI 304 (grado alimenticio). Incluye una resistencia eléctrica con corte automático para calentar el agua del sistema de caldera, y una bomba para recirculado del agua caliente. Cuenta con un sistema electrónico de regulación de temperatura totalmente automatizado, que evita el oscurecimiento de la miel. Posee, además, una base de apoyo para Desoperculadora INDERCO®. La parrilla de recirculación de agua caliente está construida con tubos de 32 mm de diametro y es rebatible para facilitar la limpieza del equipo. La capacidad de trabajo prevista es de hasta 500 cuadros por hora. Incluye 1 (un) recipiente de acero inoxidable para recolección de cera fundida.",
+                especificacionesTecnicas: [
+                    "Largo: 1200 mm.",
+                    "Ancho: 950 mm.",
+                    "Alto: 770 mm.",
+                    "Aliment. de caldera: Resistencia eléctrica.",
+                    "Fase/Tensión Opción 1: Monofásico (220v).",
+                    "Consumo Opción 1: 4700 watts.",
+                    "Amperaje Opción 1: 21A.",
+                    "Control digital temp Opción 1: 0 a 100 grados.",
+                    "Fase/Tensión Opción 2: Bifásico mas neutro (380v).",
+                    "Consumo Opción 2: 5100 watts.",
+                    "Amperaje Opción 2: 14 A.",
+                    "Control digital temp Opción 2: 0 a 100 grados.",
+                    "Potencia bomba: 1/2 HP de 1500 RPM.",
+                    "Capacidad de trabajo: Hasta 500 cuadros/hora."
+                ]
+            },
+            "8.jpg": {
+                titulo: "FUNDIDOR DE OPÉRCULO ELÉCTRICO (MG)",
+                modelo: "BFEMG",
+                funcion: "Separación de miel y cera por medio de aplicación de temperatura y derretimiento del opérculo.",
+                descripcionFuncionamiento: "El opérculo resultante del proceso de desoperculado cae desde la Desoperculadora hacia el Fundidor de Opérculo, que posee en su parte superior un conjunto de tubos calefaccionados gracias a un circuito cerrado de agua caliente con temperatura regulable. El opérculo se funde cuando entra en contacto con estos tubos, produciéndose la separación entre la cera y la miel. Por diferencia de densidades, la miel líquida se acumula en el fondo de la batea, mientras que la cera, con un peso específico menor, flota sobre la miel, en la parte superior de la batea. En este proceso, la evacuación de la miel es constante, mientras que la salida de la cera puede ser regulada.",
+                descripcionEquipo: "El Fundidor de Opérculo está fabricado en acero inoxidable AISI 304 (grado alimenticio). Incluye una resistencia eléctrica con corte automático para calentar el agua del sistema de caldera, y una bomba para recirculado del agua caliente. Cuenta con un sistema electrónico de regulación de temperatura totalmente automatizado, que evita el oscurecimiento de la miel. Posee, además, una base de apoyo para Desoperculadora INDERCO®. La parrilla de tubos de recirculación de agua caliente es rebatible, para facilitar la limpieza del equipo. La capacidad de trabajo prevista es de hasta 800 cuadros por hora. Incluye 1 (un) recipiente de acero inoxidable para recolección de cera fundida.",
+                especificacionesTecnicas: [
+                    "Largo: 1700 mm.",
+                    "Ancho: 950 mm.",
+                    "Alto: 770 mm.",
+                    "Aliment. de caldera: Resistencia eléctrica.",
+                    "Fase/Tensión Opción 1: Monofásico (220v).",
+                    "Consumo Opción 1: 5100 watts.",
+                    "Amperaje Opción 1: 23A.",
+                    "Control digital temp Opción 1: 0 a 100 grados.",
+                    "Fase/Tensión Opción 2: Bifásico mas neutro (380v).",
+                    "Consumo Opción 2: 5700 watts.",
+                    "Amperaje Opción 2: 15 A.",
+                    "Control digital temp Opción 2: 0 a 100 grados.",
+                    "Potencia bomba: 1/2 HP de 1500 RPM.",
+                    "Capacidad de trabajo: Hasta 800 cuadros/hora."
+                ]
+            },
+            "9.jpg": {
+                titulo: "EXTRACTOR DE 42 CUADROS CON CANASTOS Y MESA",
+                modelo: "E42",
+                funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
+                descripcionFuncionamiento: "Una vez desoperculados, los cuadros son introducidos manualmente dentro de un juego de canastos de acero inoxidable. Luego, estos canastos se colocan en el Extractor, que consiste básicamente en un tambor que contiene en su interior un rotor de eje vertical. Este rotor es impulsado a altas revoluciones por medio de un motor eléctrico controlado por variador electrónico de velocidad. La fuerza centrífuga resultante provoca la salida de la miel contenida en los panales. Esta miel precipita al fondo del Extractor y cae hacia una fosa receptora situada al exterior del mismo.",
+                descripcionEquipo: "Este dispositivo está fabricado en acero inoxidable AISI 304 (grado alimenticio). Consta de un tambor en cuyo interior se ubica un rotor de eje vertical con soporte para 3 (tres) canastos con capacidad de 14 (catorce) cuadros cada uno, totalizando una capacidad final de 42 (cuarenta y dos) cuadros. El rotor está impulsado por un motor eléctrico de 1/2HP a tensión monofásica/bifásica (220V) y con un consumo de 4 amperes. (existe opción a tensión trifásica por 380V, a pedido del operador). El equipo cuenta con un controlador de velocidad electrónico y sistema de aceleración progresiva. El tiempo del ciclo de trabajo es programable y con frenado electrónico. Este equipo posee una tapa de acrílico transparente, que permite visualizar el proceso de",
+                especificacionesTecnicas: [
+                    "Diámetro: 1.100 mm.",
+                    "Alto: 900 mm.",
+                    "Potencia: 1/2HP.",
+                    "Fase/Tensión: Monofásica/bifásica (220V) – trifásica (380V).",
+                    "Consumo eléctrico: 4 amperes.",
+                    "Capacidad de trabajo: hasta 210 cuadros/hora.",
+                    "Incluye 1 (una) mesa de alimentación porta-canastos y 1 (un) juego doble de canastos (6 canastos)."
+                ]
+            },
+            "10.jpg": {
+                titulo: "EXTRACTOR PARA 80 CUADROS LINEA ESTANDAR",
+                modelo: "E080STD",
+                funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
+                descripcionFuncionamiento: "Una vez desoperculados, los cuadros se cargan en los 4 canastos de acero inoxidable AISI 304 con capacidad para 20 cuadros cada uno y que se incluyen con el equipo. Luego, estos canastos son colocados dentro del Extractor. El Extractor para 80 cuadros INDERCO® consiste en un tambor en cuyo interior se sitúa un rotor de eje horizontal con soporte para 4 canastos. Una vez cerrada y asegurada la tapa superior, e iniciada la marcha, el rotor es impulsado a altas revoluciones gracias a un motor eléctrico controlado por un variador electrónico de velocidad programable. La fuerza centrífuga resultante de este proceso permite la salida de la miel contenida en los panales. Esta miel precipita al fondo de tambor, y evacúa hacia la Fosa Recolectora a través de una abertura situada en la base del tambor.",
+                descripcionEquipo: "Este extractor pertenece a una línea estándar de nuestra empresa y se caracteriza por su sólida construcción en acero inoxidable AISI 304. La forma y estructura lo hacen sólido, estable y duradero. Sin límite en el número de cuadros a extraer la miel. El extractor ha sido diseñado y construido totalmente dentro de la fábrica INDERCO, con toda la experiencia y calidad que siempre nos ha caracterizado; lo que significa que acompañara al apicultor en el tiempo, como solo un producto de calidad puede hacerlo. Este dispositivo consta de un tambor en cuyo interior se sitúa un rotor de eje horizontal con soporte para cuatro canastos con capacidad para 20 cuadros Langstroth de alza estándar cada uno, totalizando una capacidad de 80 cuadros. El equipo además cuenta con una mesa plana para carga y manipuleo de canastos, y con una mesa de descarga para salida de canastos procesados. Esta mesa de descarga posee una pendiente ergonómica que facilita el trabajo del operador. El rotor está impulsado por un motor eléctrico de 1.5 HP. Este motor está comandado por un controlador de velocidad electrónico con sistema de aceleración y frenado progresivos que permite, además, seleccionar la duración del ciclo de trabajo. Su capacidad de trabajo es de hasta 500 cuadros por hora, considerando ciclos de trabajo de entre 8 y 10 minutos.",
+                especificacionesTecnicas: [
+                    "Largo: 2500 mm.",
+                    "Ancho: 2500 mm.",
+                    "Alto: 1300 mm.",
+                    "Fase/Tensión: Monofásica (220v)- Trifásica (380v)",
+                    "Potencia: 1.5 HP.",
+                    "Capacidad de trabajo: Hasta 500 cuadros/hora.",
+                    "Incluye una mesa de carga, una mesa de descarga con pendiente y 1 juego doble de canastos (8 canastos)."
+                ]
+            },
+            "11.jpg": {
+                titulo: "EXTRACTOR PARA 80 CUADROS LINEA PREMIUM",
+                modelo: "E080",
+                funcion: "Extraer miel de los panales por medio de la aplicación de fuerza centrífuga.",
+                descripcionFuncionamiento: "Una vez desoperculados, los cuadros se cargan en los 4 canastos de acero inoxidable AISI 304 con capacidad para 20 cuadros cada uno y que se incluyen con el equipo (se incluye además un juego adicional de cuatro canastos para permitir fluidez del ciclo de carga y descarga). Luego, estos canastos son colocados dentro del Extractor. El Extractor para 80 cuadros INDERCO® consiste en un tambor en cuyo interior se sitúa un rotor de eje horizontal con soporte para 4 canastos. Una vez cerrada y asegurada la tapa superior, e iniciada la marcha, el rotor es impulsado a altas revoluciones gracias a un motor eléctrico controlado por un variador electrónico de velocidad programable. La fuerza centrífuga resultante de este proceso permite la salida de la miel contenida en los panales. Esta miel precipita al fondo de tambor, y evacúa hacia la Fosa Recolectora a través de una abertura situada en la base del tambor.",
+                descripcionEquipo: "Este dispositivo está fabricado en acero inoxidable AISI 304 (grado alimenticio). Consta de un tambor en cuyo interior se sitúa un rotor de eje horizontal con soporte para cuatro canastos con capacidad para 20 cuadros Langstroth de alza estándar cada uno, totalizando una capacidad de 80 cuadros. El equipo además cuenta con una mesa plana para carga y manipuleo de canastos, y con una mesa de descarga para salida de canastos procesados. Esta mesa de descarga posee una pendiente ergonómica que facilita el trabajo del operador. El rotor está impulsado por un motor eléctrico de 2 HP. Este motor está comandado por un controlador de velocidad electrónico con sistema de aceleración y frenado progresivos que permite, además, seleccionar la duración del ciclo de trabajo. Su capacidad de trabajo es de hasta 500 cuadros por hora, considerando ciclos de trabajo de entre 8 y 10 minutos.",
+                especificacionesTecnicas: [
+                    "Largo: 2500 mm.",
+                    "Ancho: 2500 mm.",
+                    "Alto: 1300 mm.",
+                    "Fase/Tensión: Monofásica (220v)- Trifásica (380v).",
+                    "Potencia: 2 HP.",
+                    "Capacidad de trabajo: Hasta 500 cuadros/hora.",
+                    "Incluye una mesa de carga, una mesa de descarga con pendiente y 1 juego doble de canastos (8 canastos)."
+                ]
+            },
+            "12.jpg": {
+                titulo: "EXTRACTOR PARA 120 CUADROS",
+                modelo: "E120",
+                funcion: "Extraer miel de los panales por medio de la aplicación de fuerza centrífuga.",
+                descripcionFuncionamiento: "Una vez desoperculados, los cuadros se cargan en los 4 canastos de acero inoxidable AISI 304 con capacidad para 30 cuadros cada uno y que se incluyen con el equipo (se incluye además un juego adicional de cuatro canastos para permitir fluidez del ciclo de carga y descarga). Luego, estos canastos son colocados dentro del Extractor. El Extractor para 120 cuadros INDERCO® consiste en un tambor en cuyo interior se sitúa un rotor de eje horizontal con soporte para 4 canastos. Una vez cerrada y asegurada la tapa superior, e iniciada la marcha, el rotor es impulsado a altas revoluciones gracias a un motor eléctrico controlado por un variador electrónico de velocidad programable. La fuerza centrífuga resultante de este proceso permite la salida de la miel contenida en los panales. Esta miel precipita al fondo de tambor, y evacúa hacia la Fosa Recolectora a través de una abertura situada en la base del tambor.",
+                descripcionEquipo: "Este dispositivo está fabricado en acero inoxidable AISI 304 (grado alimenticio). Consta de un tambor en cuyo interior se sitúa un rotor de eje horizontal con soporte para cuatro canastos con capacidad para 30 cuadros Langstroth de alza estándar cada uno, totalizando una capacidad de 120 cuadros. El equipo además cuenta con una mesa plana para carga y manipuleo de canastos, y con una mesa de descarga para salida de canastos procesados. Esta mesa de descarga posee una pendiente ergonómica que facilita el trabajo del operador. El rotor está impulsado por un motor eléctrico de 2 HP. Este motor está comandado por un controlador de velocidad electrónico con sistema de aceleración y frenado progresivos que permite, además, seleccionar la duración del ciclo de trabajo. Su capacidad de trabajo es de hasta 750 cuadros por hora, considerando ciclos de trabajo de entre 8 y 10 minutos.",
+                especificacionesTecnicas: [
+                    "Largo: 2500 mm.",
+                    "Ancho: 3600 mm.",
+                    "Alto: 1300 mm.",
+                    "Fase/Tensión: Monofásica (220v)- Trifásica (380v).",
+                    "Potencia: 2 HP.",
+                    "Capacidad de trabajo: Hasta 750 cuadros/hora.",
+                    "Incluye una mesa de carga, una mesa de descarga con pendiente y un juego doble de canastos (8 canastos)."
+                ]
+            },
+            "13.jpg": {
+                titulo: "EXTRACTOR PARA 160 CUADROS DE MEDIA ALZA",
+                modelo: "E160",
+                funcion: "Extraer miel de los panales por medio de la aplicación de fuerza centrífuga.",
+                descripcionFuncionamiento: "Una vez desoperculados, los cuadros se cargan en los 4 canastos de acero inoxidable AISI 304 con capacidad para 40 cuadros de media alza cada uno y que se incluyen con el equipo (se incluye además un juego adicional de cuatro canastos para permitir fluidez del ciclo de carga y descarga). Luego, estos canastos son colocados dentro del Extractor. El Extractor para 160 cuadros de media alza INDERCO® consiste en un tambor en cuyo interior se sitúa un rotor de eje horizontal con soporte para 4 canastos. Una vez cerrada y asegurada la tapa superior, e iniciada la marcha, el rotor es impulsado a altas revoluciones gracias a un motor eléctrico controlado por un variador electrónico de velocidad programable. La fuerza centrífuga resultante de este proceso permite la salida de la miel contenida en los panales. Esta miel precipita al fondo de tambor, y evacúa hacia la Fosa Recolectora a través de una abertura situada en la base del tambor.",
+                descripcionEquipo: "Este dispositivo está fabricado en acero inoxidable AISI 304 (grado alimenticio). Consta de un tambor en cuyo interior se sitúa un rotor de eje horizontal con soporte para cuatro canastos con capacidad para 40 cuadros Langstroth de media alza cada uno, totalizando una capacidad de 160 cuadros. El equipo además cuenta con una mesa plana para carga y manipuleo de canastos, y con una mesa de descarga para salida de canastos procesados. Esta mesa de descarga posee una pendiente ergonómica que facilita el trabajo del operador. El rotor está impulsado por un motor eléctrico de 2 HP. Este motor está comandado por un controlador de velocidad electrónico con sistema de aceleración y frenado progresivos que permite, además, seleccionar la duración del ciclo de trabajo. Su capacidad de trabajo es de hasta 800 cuadros por hora, considerando ciclos de trabajo de entre 10 y 12 minutos.",
+                especificacionesTecnicas: [
+                    "Largo: 2500 mm.",
+                    "Ancho: 2500 mm.",
+                    "Alto: 1300 mm.",
+                    "Fase/Tensión: Monofásica (220v)- Trifásica (380v).",
+                    "Potencia: 2 HP.",
+                    "Capacidad de trabajo: Hasta 800 cuadros/hora.",
+                    "Incluye una mesa de carga, una mesa de descarga con pendiente y 1 juego doble de canastos (8 canastos)."
+                ]
+            },
+            "14.jpg": {
+                titulo: "EXTRACTOR PARA 240 CUADROS DE MEDIA ALZA",
+                modelo: "E240",
+                funcion: "Extraer miel de los panales por medio de la aplicación de fuerza centrífuga.",
+                descripcionFuncionamiento: "Una vez desoperculados, los cuadros se cargan en los 8 canastos de acero inoxidable AISI 304 con capacidad para 30 cuadros de media alza cada uno y que se incluyen con el equipo (se incluye además un juego adicional de 8 canastos para permitir fluidez del ciclo de carga y descarga). Luego, estos canastos son colocados dentro del Extractor. El Extractor para 240 cuadros de media alza INDERCO® consiste en un tambor en cuyo interior se sitúa un rotor de eje horizontal con soporte para 8 canastos. Una vez cerrada y asegurada la tapa superior, e iniciada la marcha, el rotor es impulsado a altas revoluciones gracias a un motor eléctrico controlado por un variador electrónico de velocidad programable. La fuerza centrífuga resultante de este proceso permite la salida de la miel contenida en los panales. Esta miel precipita al fondo de tambor, y evacúa hacia la Fosa Recolectora a través de una abertura situada en la base del tambor.",
+                descripcionEquipo: "Este dispositivo está fabricado en acero inoxidable AISI 304 (grado alimenticio). Consta de un tambor en cuyo interior se sitúa un rotor de eje horizontal con soporte para 8 canastos con capacidad para 30 cuadros Langstroth de media alza cada uno, totalizando una capacidad de 240 cuadros. El equipo además cuenta con una mesa plana para carga y manipuleo de canastos, y con una mesa de descarga para salida de canastos procesados. Esta mesa de descarga posee una pendiente ergonómica que facilita el trabajo del operador. El rotor está impulsado por un motor eléctrico de 2 HP. Este motor está comandado por un controlador de velocidad electrónico con sistema de aceleración y frenado progresivos que permite, además, seleccionar la duración del ciclo de trabajo. Su capacidad de trabajo es de hasta 1200 cuadros por hora, considerando ciclos de trabajo de entre 10 y 12 minutos.",
+                especificacionesTecnicas: [
+                    "Largo: 2500 mm.",
+                    "Ancho: 3600 mm.",
+                    "Alto: 1300 mm.",
+                    "Fase/Tensión: Monofásica (220v)- Trifásica (380v).",
+                    "Potencia: 2 HP.",
+                    "Capacidad de trabajo: Hasta 1200 cuadros/hora.",
+                    "Incluye una mesa de carga, una mesa de descarga con pendiente y un juego doble de canastos (8 canastos)."
+                ]
+            },
+            "15.jpg": {
+                titulo: "BOMBA ELEVADORA DE MIEL (2″)",
+                modelo: "BEM",
+                funcion: "Elevación de miel desde la fosa hasta el tanque decantador.",
+                descripcionFuncionamiento: "La miel obtenida luego del proceso de extracción es acumulada en una fosa embutida (o externa), dispuesta para su recolección. Esta miel es succionada por la bomba elevadora para direccionarla hacia los tanques y/o decantadores.",
+                descripcionEquipo: "Dispositivo de bombeo del tipo lobular. Posee dos paletas sincronizadas mediante engranajes de dientes rectos. La paleta propulsora es impulsada por un motorreductor de 2 HP y una reducción de 1:15 y se acopla al cuerpo de bombeo mediante un manchón con carcasa de poliamida. Posee un motor trifásico de 380v con la variante a pedido del cliente de motor monofásico de 220v. El motoreductor y el cuerpo de bombeo se encuentran montados sobre una base de acero inoxidable AISI 304. El cuerpo de bombeo es de fundición de bronce y las paletas de aluminio. Todas las piezas son realizadas en centros de mecanizado CNC. Estas características le brindan una capacidad de trabajo de 100 kg./minuto, siendo la altura máxima de aspiración (entrada) de 1,5 metros y la altura máxima de elevación (salida), de 5 metros.",
+                especificacionesTecnicas: [
+                    "Largo: 748 mm.",
+                    "Ancho: 339 mm.",
+                    "Alto: 327 mm.",
+                    "Peso: 54 kg.",
+                    "Fase/Tensión: Trifásica (380v) – Monofásica (220v/110v).",
+                    "Potencia: 2 HP.",
+                    "Consumo: 4.5 A (380v) – 8 A (220v/110v).",
+                    "Capacidad de trabajo: 100 kg/min.",
+                    "Altura máxima de aspiración: 1,5 mts.",
+                    "Altura máxima de elevación: 5 mts.",
+                    "Dimensiones de boca: Ø 2 pulgadas."
+                ]
+            },
+            "16.jpg": {
+                titulo: "BOMBA 1 1/4'' CON FILTRO",
+                modelo: "BCF",
+                funcion: "Aspirar la miel desde un tambor, decantador o cualquier otro recipiente de almacenaje, y direccionarla previo filtrado.",
+                descripcionFuncionamiento: "La miel obtenida luego del proceso de extracción es acumulada en Tanques Decantadores, o directamente fraccionada en tambores de 300 Kg. Este dispositivo permite efectuar un filtrado de dicha miel, previo a su fraccionamiento en envases para venta al público. La Bomba con filtro aspira la miel y la direcciona a través de un cartucho con filtro de malla de acero inoxidable sanitario de 177 micrones, lavable, que elimina las impurezas a la vez que mantiene los componentes esenciales del producto. Una vez filtrada, la miel es direccionada al destino por el operador, previo a su fraccionado.",
+                descripcionEquipo: "Este dispositivo cuenta con base elevada de hierro con acabado en epoxi sanitario. La Bomba trabaja gracias a un sistema de engranajes, con tomas de entrada y salida de 1,25 pulgadas de diámetro, y posee cuerpo de polipropileno y engranajes de nylon con eje de acero inoxidable. Su motor es eléctrico, de 1 HP de potencia y 1.400 RPM, pudiéndose configurar para trabajar bajo instalación monofásica (220V). El equipo incluye un filtro con cartucho lavable de acero inoxidable, con malla de 177 micrones. Tanto el cuerpo del filtro como los ductos de entrada/salida están fabricados en acero inoxidable de grado sanitario. Su capacidad de aspiración promedio es de 16 kg. de miel por minuto.",
+                especificacionesTecnicas: [
+                    "Tensión / Fase: Monofásica (220V).",
+                    "Potencia: 1 HP.",
+                    "Capacidad de trabajo: 16 kg./minuto.",
+                    "Largo (Base): 700 mm.",
+                    "Largo (Total): 900 mm.",
+                    "Ancho: 600 mm.",
+                    "Alto: 1.940 mm.",
+                    "Dimensiones de bocas: Ø 1,25 pulgadas.",
+                    "Consumo: 5,8 amperes."
+                ]
+            },
+            "17.jpg": {
+                titulo: "TANQUES DECANTADORES",
+                modelo: "D100",
+                funcion: "Permitir el proceso de decantación de la miel recolectada.",
+                descripcionFuncionamiento: "El Tanque Decantador de miel consiste en un depósito cilíndrico en el que se almacena la miel que es aspirada desde la fosa recolectora. Por diferencia de densidad, la cera y las impurezas livianas quedan flotando sobre la miel, las impurezas pesadas como sólidos quedan en el fondo del tanque, y la miel limpia queda disponible para su posterior envasado.",
+                descripcionEquipo: "El Tanque Decantador de miel es fabricado en acero inoxidable AISI 304 (grado alimenticio), lo que lo hace apto para su contacto directo con alimentos. Sus paredes son de 1,5 mm de espesor, con costuras soldadas por robot MIG. Posee un indicador de nivel de carga mínima y máxima que funciona gracias a un sistema de boya. Cuenta además con niple de 2\" de diámetro para el llenado y para el vaciado del tanque. El fondo es plano con borde pestañado para evitar la acumulación de residuos. Cuenta con tapa de inspección rebatible.",
+                especificacionesTecnicas: [
+                    "1000 Kg — Alto: 1000 mm | Diámetro: 950 mm | Capacidad: 1000 Kg.",
+                    "1500 Kg — Alto: 1500 mm | Diámetro: 950 mm | Capacidad: 1500 Kg.",
+                    "2000 Kg — Alto: 2250 mm | Diámetro: 950 mm | Capacidad: 2000 Kg.",
+                    "3000 Kg — Alto: 2250 mm | Diámetro: 1100 mm | Capacidad: 3000 Kg."
+                ]
+            },
+            "18.jpg": {
+                titulo: "",
+                modelo: "",
+                funcion: "",
+                descripcionFuncionamiento: "",
+                descripcionEquipo: "",
+                especificacionesTecnicas: []
+            },
+            "19.jpg": {
+                titulo: "FOSA EMBUTIBLE PARA EXTRACTOR E120",
+                modelo: "FE12",
+                funcion: "Recolectar la miel que evacúa desde la Prensa o Fundidor de Opérculo y del Extractor para 120 cuadros (E120), para su posterior derivación a Tanques Decantadores.",
+                descripcionFuncionamiento: "La Fosa Embutible para Extractor para 120 cuadros (E120) consiste en un recipiente de acero inoxidable calidad AISI 304 (grado alimenticio). Se ubica empotrada en el suelo, debajo de la mesa de carga del Extractor. Dentro de la Fosa cae la miel procedente tanto de la/s Prensa/s de Opérculo (o del/los Fundidor/es de Opérculo, en caso de corresponder), como también del Extractor centrífugo para 120 cuadros (E120). Posteriormente, esta miel será aspirada por la Bomba Elevadora de Miel, para su decantación, homogeneización y/o envasado.",
+                descripcionEquipo: "La Fosa Embutible para Extractor para 120 cuadros (E120) está fabricada totalmente en acero inoxidable calidad AISI 304 (grado alimenticio), lo que la hace apta para su contacto directo con alimentos. Posee una tapa de acero inoxidable, más una tapa de acrílico transparente para permitir la inspección ocular de la miel. Cuenta con borde sanitario, acorde con las especificaciones de la normativa vigente. La Fosa Embutible para Extractor E120 tiene una canaleta en uno de sus vértices, que facilita el escurrimiento de la miel desde el Extractor hacia su interior. Además, su fondo con pendiente permite el completo desagote mediante aspiración, y posee un buche en donde se concentran los residuos sólidos que podría contener la miel, cuya función es evitar que estos residuos sean aspirados por la bomba. Sus dimensiones son de 1.700 mm de largo por 900 mm de ancho y 800 mm de profundidad máxima, lo que le permite una capacidad de 1.500 kg. de miel.",
+                especificacionesTecnicas: [
+                    "Largo: 1.700 mm.",
+                    "Ancho: 900 mm.",
+                    "Profundidad: 600 mm. (mínima) / 800 mm. (máxima).",
+                    "Capacidad: 1.500 Kg. de miel."
+                ]
+            },
+            "20.jpg": {
+                titulo: "FOSA EMBUTIBLE PARA EXTRACTOR E80",
+                modelo: "FE80",
+                funcion: "Recolectar la miel que evacúa desde la Prensa o Fundidor de Opérculo y del Extractor para 80 cuadros (E80), para su posterior derivación a Tanques Decantadores.",
+                descripcionFuncionamiento: "La Fosa Embutible para Extractor para 80 cuadros (E80) consiste en un recipiente de acero inoxidable calidad AISI 304 (grado alimenticio). Se ubica empotrada en el suelo, debajo de la mesa de carga del Extractor. Dentro de la Fosa cae la miel procedente tanto de la/s Prensa/s de Opérculo (o del/los Fundidor/es de Opérculo, en caso de corresponder), como también del Extractor centrífugo para 80 cuadros (E80). Posteriormente, esta miel será aspirada por la Bomba Elevadora de Miel, para su decantación, homogeneización y/o envasado.",
+                descripcionEquipo: "La Fosa Embutible para Extractor para 80 cuadros (E80) está fabricada totalmente en acero inoxidable calidad AISI 304 (grado alimenticio), lo que la hace apta para su contacto directo con alimentos. Se ubica empotrada en el suelo de la sala de extracción, debajo de la mesa de carga del Extractor. Posee una tapa de acero inoxidable, más una tapa de acrílico transparente para permitir la inspección ocular de la miel. Cuenta con borde sanitario, acorde con las especificaciones de la normativa vigente. La Fosa Embutible para Extractor E80 tiene una canaleta en uno de sus vértices, que facilita el escurrimiento de la miel desde el Extractor hacia su interior. Además, su fondo con pendiente permite el completo desagote mediante aspiración, y posee un buche en donde se concentran los residuos sólidos que podría contener la miel, cuya función es evitar que estos residuos sean aspirados por la bomba. Sus dimensiones son de 1.650 mm de largo por 600 mm de ancho y 800 mm de profundidad máxima, lo que le permite una capacidad de 1.000 kg. de miel.",
+                especificacionesTecnicas: [
+                    "Largo: 1.650 mm.",
+                    "Ancho: 600 mm.",
+                    "Profundidad: 600 mm. (mínima) / 800 mm. (máxima).",
+                    "Capacidad: 1.000 Kg. de miel."
+                ]
+            },
+            "21.jpg": {
+                titulo: "CREMADORA DE MIEL",
+                modelo: "CREM 300",
+                funcion: "Romper los cristales de la miel para lograr una consistencia cremosa.",
+                descripcionFuncionamiento: "La cremadora de miel cuenta con un motorreductor de 3 HP el cual se encarga de hacer girar un eje. Este eje posee tres paletas aceradas que raspan la miel y en su movimiento giratorio, la baten. La miel cremada se va logrando por la ruptura de los cristales del azúcar que contiene, obteniéndose de esta manera una consistencia cremosa.",
+                descripcionEquipo: "Todas las partes en contacto con miel se encuentran fabricadas en acero inoxidable AISI 304 (grado alimenticio), con estructura de hierro acabado epoxi sanitario. Equipada con motorreductor eléctrico de 3 HP, relación 1:50. Con interruptor de encendido y sostén de tambor mediante zunchos metálicos y malacate manual con cable de acero. Posee base con ruedas para su traslado.",
+                especificacionesTecnicas: [
+                    "Largo: 1200 mm.",
+                    "Ancho: 1200 mm.",
+                    "Alto: 2350 mm.",
+                    "Peso: 230 kg.",
+                    "Fase/Tensión: Trifásica (380v) – Monofásica (220v).",
+                    "Potencia del motor: 3 HP."
+                ]
+            },
+            "22.jpg": {
+                titulo: "LAVADORA DE CUADROS CON CALDERA A GAS",
+                modelo: "LAVG",
+                funcion: "Fundir la totalidad de la cera de los cuadros (marcos de panales), recuperándola mediante la aplicación combinada de fuerza centrífuga y del vapor de agua a presión suministrado por la Caldera.",
+                descripcionFuncionamiento: "La Lavadora de Cuadros consta de un tambor fabricado en chapa de acero inoxidable calidad 430, en cuyo interior se sitúa un rotor de eje vertical con soportes para 3 (tres) canastos extraíbles con capacidad para 20 (veinte) cuadros cada uno. Esta configuración le brinda al equipo una capacidad total de 60 (sesenta) cuadros por ciclo de lavado. El rotor es impulsado por un motor eléctrico de 1 HP monofásico (220V) (existe opción de motor trifásico a 380V, a elección del operador), y es comandado por medio de tablero con llave de encendido y freno manual. Su performance es de entre 180 y 240 cuadros por hora, considerando ciclos de lavado de aproximadamente 15 (quince) minutos. Con respecto a la Caldera, ésta se encuentra fabricada en chapa de acero de calidad 1010. Respecto a su alimentación, las dos opciones disponibles son: a) Gas natural de red; y b) Gas envasado, por medio de 3 (tres) garrafas de 10 kg. cada una. La Caldera cuenta con 50 (cincuenta) tubos internos para transmisión y distribución del calor. Además, está equipada con válvula de seguridad, presostato de corte, manómetro y visor del nivel del agua. Cuenta con canillas para purga y llenado de agua, y salida de vapor en su parte superior. Posee mechero con comando eléctrico, con corte y arranque automáticos. Trabaja con una presión de 2 kg/cm2, y su capacidad es de 260 litros de agua, que le permite suministrar un flujo de vapor de 50 kg/hora, mientras que su consumo estimado es de 1 kg. de vapor por ciclo de lavado. El equipo se comercializa acompañado de 2 (dos) recipientes de acero inoxidable para recolección de cera fundida.",
+                descripcionEquipo: "",
+                especificacionesTecnicas: [
+                    "— LAVADORA DE CUADROS —",
+                    "Diámetro: 1.200 mm.",
+                    "Altura: 800 mm.",
+                    "Potencia motor: 1 HP.",
+                    "Fase/Tensión: Monofásica/bifásica (220V) – Trifásica (380V).",
+                    "Performance: entre 180 y 240 cuadros/hora.",
+                    "Incluye 2 (dos) recipientes de acero inoxidable para recolección de cera fundida.",
+                    "— CALDERA —",
+                    "Diámetro: 700 mm.",
+                    "Altura: 1.800 mm.",
+                    "Presión de trabajo: 2 kg/cm².",
+                    "Producción de vapor: 50 kg/hora.",
+                    "Capacidad (agua): 260 lts.",
+                    "Capacidad (mechero): 50.000 kCal."
+                ]
+            },
+            "23.jpg": {
+                titulo: "FUNDIDOR DE PELLETS",
+                modelo: "E080",
+                funcion: "Fundir opérculo prensado y lavar marcos y rejillas excluidoras.",
+                descripcionFuncionamiento: "El fundidor de pellets es una caja de doble pared que contiene agua. Mediante un mechero ubicado en la parte inferior, el agua se calienta generando vapor que ingresa por unos orificios a la parte interna donde se encuentra el opérculo prensado o los cuadros. Estos se encuentran en dos canastos de malla perforada, los cuales actúan de medio filtrante. La cera derretida sale por una válvula esférica hacia el separador por densidad, y de éste a los moldes para cera.",
+                descripcionEquipo: "Construido en acero inoxidable AISI 304. Este equipo sirve tanto para fundir opérculo prensado como para lavar marcos y rejillas excluidoras. Puede funcionar con gas natural o envasado y cuenta con 2 (dos) canastos, 1 (un) separador por densidad y 3 (tres) moldes para cera.",
+                especificacionesTecnicas: [
+                    "Largo: 690 mm.",
+                    "Ancho: 660 mm.",
+                    "Alto: 1000 mm.",
+                    "Peso: 163 kg.",
+                    "Material: Acero inoxidable AISI 304.",
+                    "Tipo de gas: Red o Envasado.",
+                    "Sistema de seguridad: Termocupla.",
+                    "Canastos: 2 (15 cuadros c/u).",
+                    "Molde separador: 1 (para pellets).",
+                    "Moldes para cera: 2 (dos).",
+                    "Purga agua: Llave esférica 1/2 pulgada.",
+                    "Salida cera: Llave esférica 1 pulgada.",
+                    "Volumen de agua: 20 a 25 litros.",
+                    "Capacidad de trabajo: 30 cuadros / 35 minutos.",
+                    "— DATOS REFERENCIALES PARA 110 KG DE OPÉRCULO FUNDIDO —",
+                    "Consumo de gas: 2,5 m³.",
+                    "Pellets: 110 kg.",
+                    "Cera: 80 kg.",
+                    "Borra: 30 kg.",
+                    "Tiempo de trabajo: 6 hs.",
+                    "Consumo de agua: 40 lts."
+                ]
+            },
+            "24.jpg": {
+                titulo: "BOMBA ELEVADORA DE MIEL (1 1/4\")",
+                modelo: "BEM114",
+                funcion: "Elevación de miel desde la fosa hasta el tanque decantador.",
+                descripcionFuncionamiento: "La miel obtenida luego del proceso de extracción es acumulada en una fosa embutida (o externa), dispuesta para su recolección. Esta miel es succionada por la bomba elevadora para direccionarla hacia los tanques y/o decantadores.",
+                descripcionEquipo: "",
+                especificacionesTecnicas: [
+                    "Largo: 430 mm.",
+                    "Ancho: 240 mm.",
+                    "Alto: 450 mm.",
+                    "Fase/Tensión: Monofásica (220V).",
+                    "Potencia: 0,5 HP.",
+                    "Consumo: 4,5 A (220V).",
+                    "Capacidad de trabajo: 30 kg/min.",
+                    "Altura máxima de aspiración: 1,5 mts.",
+                    "Altura máxima de elevación: 3 mts.",
+                    "Dimensiones de boca: Ø 1 1/4 pulgadas."
+                ]
+            }
+        };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        const productosExtraccionPequenos = {
+            "25.jpg": {
+                titulo: "DESOPERCULADORA ESTÁNDAR",
+                modelo: "DAE STD",
+                funcion: "Cortar el opérculo excedente del panal para facilitar la salida de la miel contenida en su interior.",
+                descripcionFuncionamiento: "Los cuadros se introducen manualmente al sistema de transmisión automática a través de una boca de entrada situada en la parte superior del equipo. Estos cuadros son transportados, por medio de una barra acarreadora, entre dos cuchillas calefaccionadas que separan el opérculo de las dos caras del panal al mismo tiempo. Una vez concluido este proceso, los cuadros son expulsados por la parte inferior del equipo, desde donde son retirados para su colocación en el extractor de miel.",
+                descripcionEquipo: "La desoperculadora estándar es un equipo versátil pensado principalmente para el pequeño apicultor. Está construida en acero inoxidable AISI 304, cumpliendo con todas las reglamentaciones sanitarias que exigen los entes reguladores. El equipo consta de un sistema de transmisión por cadenas y engranajes, traccionados por un motor de 1/2 HP de 1380 RPM, acoplado a un reductor con relación 1:40. Funciona con tensión de 220V y frecuencia de 50 Hz, y posee una caja reductora con embrague, llave de marcha y reversa. El sistema de calentamiento de las cuchillas y de los peines es eléctrico, mediante resistencias, comandado por un controlador electrónico que permite setear manualmente la temperatura de trabajo deseada de manera independiente para cada componente. El equipo tiene capacidad de procesar 300 cuadros por hora a velocidad única, según la posición en la que el operario sitúe la correa dentro del canal de la polea.",
+                especificacionesTecnicas: [
+                    "Ancho: 760 mm.",
+                    "Alto: 730 mm.",
+                    "Profundidad: 340 mm.",
+                    "Tensión de trabajo: AC 220V.",
+                    "Potencia del motor: 1/2 HP.",
+                    "Consumo: 2200 watts.",
+                    "Control temperatura digital: 0 a 150 grados."
+                ]
+            },
+            "26.jpg": {
+                titulo: "CUCHILLO DESOPERCULADOR CON BATEA",
+                modelo: "CDB",
+                funcion: "Desopercular panales manualmente mediante cuchillo eléctrico en 'V' con batea de recolección de miel y opérculo.",
+                descripcionFuncionamiento: "Al deslizar el panal sobre la cuchilla se corta el opérculo de manera muy sencilla debido a la inclinación del bastidor. La altura del bastidor es regulable, lo que permite un fácil deslizamiento del cuadro hacia abajo. El cuchillo en V está montado sobre resortes, lo que permite un ajuste uniforme sobre el panal. El cuchillo posee una resistencia intercambiable de 800W con un controlador de temperatura de 0 a 200°. La batea cuenta con un piso flotante realizado en chapa perforada para la separación de la miel del opérculo por escurrimiento.",
+                descripcionEquipo: "Sistema de desoperculado manual con cuchillo eléctrico en 'V' y batea de desoperculado construidos en acero inoxidable calidad AISI 304. La batea está construida en chapa de 0,9 mm de espesor, mientras que las patas y bastidor son de 2,5 mm de espesor.",
+                especificacionesTecnicas: [
+                    "Cuchillo fabricado en acero inoxidable calidad AISI 304.",
+                    "Potencia: 800 watts.",
+                    "Regulador de temperatura: 0 a 200 grados Celsius.",
+                    "Batea en acero inoxidable calidad AISI 304.",
+                    "Largo (batea): 900 mm.",
+                    "Ancho (batea): 460 mm.",
+                    "Profundidad (batea): 380 mm.",
+                    "Altura (batea): 900 mm.",
+                    "Peso: 30 kg."
+                ]
+            },
+            "27.jpg": {
+                titulo: "PRENSA DE OPÉRCULO (CH)",
+                modelo: "PRCH",
+                funcion: "Tratamiento del opérculo para la separación de cera y miel, mediante compresión y sin aplicación de temperatura.",
+                descripcionFuncionamiento: "El opérculo resultante del proceso de desoperculado cae desde la Desoperculadora hacia una boca de entrada en cuyo interior se encuentra el tornillo sinfín, que arrastra y comprime el opérculo para efectuar la separación de la miel y de la cera. La cera comprimida por el sinfín sale al exterior en estado sólido a través de una boca de salida de calibre regulable situada en su extremo delantero, mientras que la miel cae por gravedad hacia una fosa recolectora. Este método de tratamiento del opérculo es efectuado sin la intervención de temperatura, y de manera continua.",
+                descripcionEquipo: "Este dispositivo está fabricado en acero inoxidable AISI 304 (grado alimenticio) y opera gracias a un motor eléctrico de 2 HP. Posee un controlador electrónico de velocidad de rotación del sistema de compresión, y cuenta con un tablero de comando con protecciones eléctricas. Su performance es de hasta 150 cuadros/hora. El equipo incluye, además, una base de apoyo para Desoperculadora INDERCO®, y se comercializa acompañado de un recipiente de acero inoxidable y un filtro interno para la recolección de cera.",
+                especificacionesTecnicas: [
+                    "Largo: 1300 mm.",
+                    "Ancho: 700 mm.",
+                    "Alto: 760 mm.",
+                    "Fase/Tensión: Trifásica (380v) – Monofásica (220v/110v).",
+                    "Potencia: 2 HP.",
+                    "Consumo: Trifásica (380v) 3,6 A – Monofásica (220v) 13 A.",
+                    "Capacidad de trabajo: hasta 150 cuadros/hora."
+                ]
+            },
+            "28.jpg": {
+                titulo: "EXTRACTOR DE 42 CUADROS LÍNEA ESTÁNDAR",
+                modelo: "E42STD",
+                funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
+                descripcionFuncionamiento: "Una vez desoperculados, los cuadros son introducidos manualmente dentro del extractor, que consiste básicamente en un tambor que contiene en su interior un rotor de eje vertical. Este rotor es impulsado a altas revoluciones por medio de un motor eléctrico controlado por variador electrónico de velocidad. La fuerza centrífuga resultante provoca la salida de la miel contenida en los panales. Esta miel precipita al fondo del Extractor y cae hacia una fosa receptora situada al exterior del mismo.",
+                descripcionEquipo: "Este dispositivo pertenece a la línea estándar de nuestra empresa y está fabricado en acero inoxidable AISI 304 (grado alimenticio). Consta de un tambor en cuyo interior se ubica un rotor de eje vertical con una capacidad total de 42 (cuarenta y dos) cuadros. El rotor está impulsado por un motor eléctrico de 1 HP de alto par de arranque a tensión monofásica (220V); existe opción a tensión trifásica por 380V a pedido del operador. El equipo cuenta con un controlador de velocidad electrónico y sistema de aceleración progresiva. El ciclo de trabajo es programable y con frenado electrónico. Posee una tapa de acrílico transparente que permite visualizar el proceso de centrifugado. Su capacidad de trabajo es de hasta 200 cuadros por hora. La forma y estructura lo hacen sólido, estable y duradero, diseñado y construido totalmente dentro de la fábrica INDERCO.",
+                especificacionesTecnicas: [
+                    "Material del cuerpo: Chapa acero inoxidable AISI 304 (1,2 y 2,5 mm de espesor).",
+                    "Material de la jaula: Acero inoxidable AISI 304 (2,5 mm de espesor).",
+                    "Material de las tapas: Acrílico (3 mm de espesor).",
+                    "Motorización: Motor eléctrico 1 HP con regulador de velocidad de 0 a 300 RPM.",
+                    "Diámetro de la cuba: 900 mm.",
+                    "Altura de la cuba: 650 mm.",
+                    "Capacidad: 20 cuadros.",
+                    "Diámetro niple salida: 38,1 mm (1 1/2 pulgadas)."
+                ]
+            },
+            "29.jpg": {
+                titulo: "EXTRACTOR DE 20 CUADROS ESTÁNDAR",
+                modelo: "E20STD",
+                funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
+                descripcionFuncionamiento: "El extractor de miel motorizado E20 es un equipo construido en acero inoxidable AISI 304, que posee un rotor con capacidad para alojar 20 cuadros estándar, 1/2 y 3/4 de alza. Este rotor es impulsado por un motor eléctrico monofásico de 220V de tensión y 0,5 HP de potencia, fijado sobre la cuba, con posibilidad de regulación entre 0 y 300 RPM. La parte inferior del equipo contiene un fondo cónico, con una salida niple macho de 1 1/2 pulgadas y 3 patas de acero que sustentan la estructura del extractor. Permite una descarga total para no generar residuos de miel durante el procesamiento. El extractor ha sido diseñado y construido totalmente dentro de la fábrica INDERCO, con toda la experiencia y calidad que siempre nos ha caracterizado.",
+                descripcionEquipo: "Este extractor pertenece a la línea estándar de INDERCO y se caracteriza por la sólida construcción de la cuba y la jaula, ambas en acero inoxidable AISI 304, cumpliendo con las normas sanitarias internacionales sobre materiales en contacto con la miel. La forma y estructura lo hacen sólido, estable y duradero, sin límite en el número de cuadros a extraer.",
+                especificacionesTecnicas: [
+                    "Material del cuerpo: Chapa acero inoxidable AISI 304 (1,2 y 2,5 mm de espesor).",
+                    "Material de la jaula: Acero inoxidable AISI 304 (2,5 mm de espesor).",
+                    "Material de las tapas: Acrílico (3 mm de espesor).",
+                    "Motorización: Motor eléctrico 0,5 HP con regulador de velocidad de 0 a 350 RPM.",
+                    "Diámetro de la cuba: 800 mm.",
+                    "Altura de la cuba: 600 mm.",
+                    "Diámetro de la jaula: 730 mm.",
+                    "Altura de la jaula: 450 mm.",
+                    "Capacidad: 20 cuadros.",
+                    "Diámetro niple salida: 38,1 mm (1 1/2 pulgadas)."
+                ]
+            },
+            "30.jpg": {
+                titulo: "EXTRACTOR DE 8 CUADROS ESTÁNDAR Y 12 DE MEDIA ALZA",
+                modelo: "E8-12STD",
+                funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
+                descripcionFuncionamiento: "El extractor de miel motorizado E8 es un equipo construido en acero inoxidable AISI 304, que posee un rotor con capacidad para alojar 8 cuadros estándar y 12 cuadros de 1/2 y 3/4 de alza. Este rotor es impulsado por un motor eléctrico monofásico de 220V y 0,33 HP de potencia, fijado sobre la cuba, con posibilidad de regulación entre 0 y 300 RPM. La parte inferior del equipo contiene un fondo cónico, con una salida niple macho de 1 1/2 pulgadas y 3 patas de acero que sustentan la estructura del extractor. Permite una descarga total para no generar residuos de miel durante el procesamiento. El extractor ha sido diseñado y construido totalmente dentro de la fábrica INDERCO, con toda la experiencia y calidad que siempre nos ha caracterizado.",
+                descripcionEquipo: "Este extractor pertenece a la línea estándar de INDERCO y se caracteriza por la sólida construcción de la cuba y la jaula, ambas en acero inoxidable AISI 304, cumpliendo con las normas sanitarias internacionales sobre materiales en contacto con la miel. La forma y estructura lo hacen sólido, estable y duradero, sin límite en el número de cuadros a extraer.",
+                especificacionesTecnicas: [
+                    "Material del cuerpo: Chapa acero inoxidable AISI 304 (1,2 y 2,5 mm de espesor).",
+                    "Material de la jaula: Acero inoxidable AISI 304 (2,5 mm de espesor).",
+                    "Material de las tapas: Acrílico (3 mm de espesor).",
+                    "Motorización: Motor eléctrico 0,33 HP con regulador de velocidad de 0 a 300 RPM.",
+                    "Diámetro de la cuba: 655 mm.",
+                    "Altura de la cuba: 600 mm.",
+                    "Diámetro de la jaula: 595 mm.",
+                    "Altura de la jaula: 450 mm.",
+                    "Capacidad: 8 cuadros estándar / 12 cuadros de media alza.",
+                    "Diámetro niple salida: 38,1 mm (1 1/2 pulgadas)."
+                ]
+            },
+            "31.jpg": {
+                titulo: "BATEA DE DESOPERCULADO",
+                modelo: "BD",
+                funcion: "Recolectar el opérculo y la miel resultante del proceso de desoperculado manual.",
+                descripcionFuncionamiento: "La Batea de Desoperculado es un recipiente que recibe el opérculo y la miel que escurre durante el proceso de desoperculado manual. Cuenta con un piso flotante de chapa perforada que permite la separación de la miel del opérculo por escurrimiento gravitatorio.",
+                descripcionEquipo: "Fabricada en acero inoxidable calidad AISI 304 (grado alimenticio), apta para contacto directo con alimentos. La batea está construida en chapa de 0,9 mm de espesor, mientras que las patas y el bastidor son de 2,5 mm de espesor.",
+                especificacionesTecnicas: [
+                    "Material: Acero inoxidable calidad AISI 304.",
+                    "Largo: 900 mm.",
+                    "Ancho: 460 mm.",
+                    "Profundidad: 380 mm.",
+                    "Altura: 900 mm.",
+                    "Peso: 30 kg.",
+                    "Espesor chapa batea: 0,9 mm.",
+                    "Espesor patas y bastidor: 2,5 mm."
+                ]
+            },
+            "32.jpg": {
+                titulo: "FUNDIDOR DE PELLETS",
+                modelo: "E080",
+                funcion: "Fundir opérculo prensado y lavar marcos y rejillas excluidoras.",
+                descripcionFuncionamiento: "El fundidor de pellets es una caja de doble pared que contiene agua. Mediante un mechero ubicado en la parte inferior, el agua se calienta generando vapor que ingresa por unos orificios a la parte interna donde se encuentra el opérculo prensado o los cuadros. Estos se encuentran en dos canastos de malla perforada, los cuales actúan de medio filtrante. La cera derretida sale por una válvula esférica hacia el separador por densidad, y de éste a los moldes para cera.",
+                descripcionEquipo: "Construido en acero inoxidable AISI 304. Este equipo sirve tanto para fundir opérculo prensado como para lavar marcos y rejillas excluidoras. Puede funcionar con gas natural o envasado y cuenta con 2 (dos) canastos, 1 (un) separador por densidad y 3 (tres) moldes para cera.",
+                especificacionesTecnicas: [
+                    "Largo: 690 mm.",
+                    "Ancho: 660 mm.",
+                    "Alto: 1000 mm.",
+                    "Peso: 163 kg.",
+                    "Material: Acero inoxidable AISI 304.",
+                    "Tipo de gas: Red o Envasado.",
+                    "Sistema de seguridad: Termocupla.",
+                    "Canastos: 2 (15 cuadros c/u).",
+                    "Molde separador: 1 (para pellets).",
+                    "Moldes para cera: 2 (dos).",
+                    "Purga agua: Llave esférica 1/2 pulgada.",
+                    "Salida cera: Llave esférica 1 pulgada.",
+                    "Volumen de agua: 20 a 25 litros.",
+                    "Capacidad de trabajo: 30 cuadros / 35 minutos.",
+                    "— DATOS REFERENCIALES PARA 110 KG DE OPÉRCULO FUNDIDO —",
+                    "Consumo de gas: 2,5 m³.",
+                    "Pellets: 110 kg.",
+                    "Cera: 80 kg.",
+                    "Borra: 30 kg.",
+                    "Tiempo de trabajo: 6 hs.",
+                    "Consumo de agua: 40 lts."
+                ]
+            },
+            "33.jpg": {
+                titulo: "DECANTADOR DE 50 KG",
+                modelo: "",
+                funcion: "",
+                descripcionFuncionamiento: "",
+                descripcionEquipo: "",
+                especificacionesTecnicas: []
+            },
+            "34.jpg": {
+                titulo: "DECANTADOR DE 600 KG",
+                modelo: "",
+                funcion: "",
+                descripcionFuncionamiento: "",
+                descripcionEquipo: "",
+                especificacionesTecnicas: []
+            }
+        };
+
+        const todosLosProductos = {
+            ...productosExtraccion,
+            ...productosExtraccionPequenos
+        };
+
+        // Función para abrir modal
+        function abrirModal(nombreImagen) {
+            const modal = document.getElementById('modalProducto');
+            const modalImagen = document.getElementById('modalImagen');
+            const modalTitulo = document.getElementById('modalTitulo');
+            const modalDescripcion = document.getElementById('modalDescripcion');
+            const btnContacto = document.getElementById('btnContactoModal');
+
+            const producto = todosLosProductos[nombreImagen];
+            const rutaImagen = `img/extraccion/${nombreImagen}`;
+
+            modalImagen.src = rutaImagen;
+            modalImagen.alt = producto.titulo;
+            modalTitulo.textContent = producto.titulo;
+
+            let contenido = '';
+
+            // Agregar descripción del equipo si existe
+            if (producto.descripcionEquipo) {
+                contenido += `<div class="seccion-modal descripcion-equipo">
+                    <p>${producto.descripcionEquipo}</p>
+                </div>`;
+            }
+
+            contenido += `<div class="seccion-modal">
+                <h4>MODELO</h4>
+                <p>${producto.modelo}</p>
+            </div>`;
+
+            contenido += `<div class="seccion-modal">
+                <h4>FUNCIÓN</h4>
+                <p>${producto.funcion}</p>
+            </div>`;
+
+            contenido += `<div class="seccion-modal">
+                <h4>DESCRIPCIÓN DE FUNCIONAMIENTO</h4>
+                <p>${producto.descripcionFuncionamiento}</p>
+            </div>`;
+
+            contenido += `<div class="seccion-modal">
+                <h4>ESPECIFICACIONES TÉCNICAS</h4>
+                <ul class="especificaciones">`;
+
+            producto.especificacionesTecnicas.forEach(spec => {
+                contenido += `<li>${spec}</li>`;
+            });
+
+            contenido += '</ul></div>';
+
+            modalDescripcion.innerHTML = contenido;
+
+            // Configurar botón de WhatsApp
+            const telefonoWhatsApp = '+542344427549';
+            const mensajeWhatsApp =
+                `Hola, me interesa consultar sobre: ${producto.titulo} (Modelo: ${producto.modelo}). ¿Podrían proporcionarme información y presupuesto?`;
+            const enlaceWhatsApp = `https://wa.me/${telefonoWhatsApp}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+            btnContacto.href = enlaceWhatsApp;
+
+            modal.style.display = 'block';
+        }
+
+        // Función para cerrar modal
+        function cerrarModal() {
+            const modal = document.getElementById('modalProducto');
+            modal.style.display = 'none';
+        }
+
+        // Event listeners del modal
+        document.querySelector('.modal-cerrar').addEventListener('click', cerrarModal);
+        window.addEventListener('click', function (event) {
+            const modal = document.getElementById('modalProducto');
+            if (event.target == modal) {
+                cerrarModal();
+            }
+        });
+
+        function generarTarjetas(productos, gridId) {
+            const grid = document.getElementById(gridId);
+            Object.entries(productos).forEach(([nombreImagen, producto]) => {
+                const rutaImagen = `img/extraccion/${nombreImagen}`;
+                const tarjeta = document.createElement('div');
+                tarjeta.className = 'tarjeta-maquina';
+                tarjeta.innerHTML = `
+                    <div class="imagen-maquina">
+                        <img src="${rutaImagen}" alt="${producto.titulo}">
+                    </div>
+                    <div class="producto-contenido">
+                        <h3 class="producto-titulo">${producto.titulo}</h3>
+                        <p class="producto-modelo"><strong>Modelo:</strong> ${producto.modelo}</p>
+                        <p class="producto-funcion"><strong>Función:</strong> ${producto.funcion}</p>
+                    </div>
+                    <button class="btn-mas-informacion" onclick="abrirModal('${nombreImagen}')">
+                        <i class="fas fa-info-circle"></i> Más Información
+                    </button>
+                `;
+                grid.appendChild(tarjeta);
+            });
+        }
+
+        generarTarjetas(productosExtraccion, 'grid-maquinas');
+        generarTarjetas(productosExtraccionPequenos, 'grid-maquinas-pequenos');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDERCO S.A. | Contacto</title>
+    <meta name="description" content="Contacto y presupuestos - INDERCO S.A. Tecnología apícola industrial.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contacto-hero {
+            background: linear-gradient(135deg, #1F4D40 0%, #2F6F5E 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            margin-top: 80px;
+        }
+
+        .contacto-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .contacto-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .info-bloque {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-bloque-icono {
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primario);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-bloque-icono i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .info-bloque-texto h4 {
+            color: var(--color-secundario);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-bloque-texto p,
+        .info-bloque-texto a {
+            color: var(--color-texto-claro);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-decoration: none;
+        }
+
+        .info-bloque-texto a:hover {
+            color: var(--color-primario);
+        }
+
+        .seccion-titulo-contacto {
+            color: var(--color-secundario);
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .seccion-subtitulo-contacto {
+            color: var(--color-texto-claro);
+            margin-bottom: 2.5rem;
+            font-size: 0.95rem;
+        }
+
+        .redes-contacto {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .redes-contacto a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: var(--color-terciario);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: var(--transicion);
+            text-decoration: none;
+        }
+
+        .redes-contacto a:hover {
+            background-color: var(--color-acento);
+            transform: translateY(-3px);
+        }
+
+        .formulario-contacto {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid var(--color-primario);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-grupo {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-grupo label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--color-secundario);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-grupo input,
+        .form-grupo select,
+        .form-grupo textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: var(--fuente-principal);
+            font-size: 0.95rem;
+            color: var(--color-texto);
+            transition: var(--transicion);
+            background-color: #fafafa;
+        }
+
+        .form-grupo input:focus,
+        .form-grupo select:focus,
+        .form-grupo textarea:focus {
+            outline: none;
+            border-color: var(--color-primario);
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(47, 111, 94, 0.1);
+        }
+
+        .form-grupo textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .btn-enviar {
+            width: 100%;
+            background-color: var(--color-primario);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: var(--fuente-principal);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transicion);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-enviar:hover {
+            background-color: var(--color-terciario);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(47, 111, 94, 0.3);
+        }
+
+        .btn-whatsapp-contacto {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            background-color: #25D366;
+            color: white;
+            padding: 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: var(--transicion);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-whatsapp-contacto:hover {
+            background-color: #1CBF63;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .mapa-seccion {
+            background-color: var(--color-fondo);
+            padding: 4rem 0;
+        }
+
+        .mapa-contenedor {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mapa-contenedor h2 {
+            text-align: center;
+            color: var(--color-secundario);
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .mapa-iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .contacto-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contacto-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecera" id="cabecera">
+        <nav class="nav-contenedor">
+            <a href="index.html" class="logo">
+                <img src="img/ICON.png" alt="INDERCO Logo" style="height: 40px; width: auto; margin-right: 10px;">
+                <span style="color: #93D94E;">IND</span> <span style="color: #6B7280;">ERCO</span>
+            </a>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="menu-navegacion" id="menu-navegacion">
+                <li><a href="index.html#nosotros">La Empresa</a></li>
+                <li class="dropdown">
+                    <a href="index.html#soluciones">Productos</a>
+                    <ul class="submenu">
+                        <li><a href="extraccion.html">Extracción de miel</a></li>
+                        <li><a href="fraccionado.html">Fraccionado de miel</a></li>
+                        <li><a href="homogenizado.html">Homogeneizado de miel</a></li>
+                        <li><a href="accesorios.html">Accesorios</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#industria40">Industria 4.0</a></li>
+                <li><a href="contacto.html">Contacto Comercial</a></li>
+                <li><a href="contacto.html" class="btn-principal"
+                        style="padding: 10px 20px; font-size: 0.8rem;">Presupuesto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <div class="contacto-hero">
+        <h1>Contacto Comercial</h1>
+        <p>Estamos para asesorarte. Completá el formulario o escribinos directamente por WhatsApp.</p>
+    </div>
+
+    <!-- Sección principal -->
+    <section class="contenedor">
+        <div class="contacto-grid">
+
+            <!-- Información de contacto -->
+            <div>
+                <h2 class="seccion-titulo-contacto">Información de Contacto</h2>
+                <p class="seccion-subtitulo-contacto">Podés comunicarte con nosotros por cualquiera de los siguientes
+                    medios.</p>
+
+                <div class="info-bloque">
+                    <div class="info-bloque-icono">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-bloque-texto">
+                        <h4>Dirección</h4>
+                        <a href="https://maps.app.goo.gl/EA14rdeKvow57ZfUA" target="_blank">
+                            Ruta Nacional N° 205 km 183.5 S/N, B7260 Saladillo, Provincia de Buenos Aires
+                        </a>
+                    </div>
+                </div>
+
+                <div class="info-bloque">
+                    <div class="info-bloque-icono">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="info-bloque-texto">
+                        <h4>Teléfono</h4>
+                        <a href="tel:+542344427549">+54 (2344) 42-7549</a>
+                    </div>
+                </div>
+
+                <div class="info-bloque">
+                    <div class="info-bloque-icono">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="info-bloque-texto">
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/542344427549" target="_blank">+54 (2344) 42-7549</a>
+                    </div>
+                </div>
+
+                <div class="info-bloque">
+                    <div class="info-bloque-icono">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-bloque-texto">
+                        <h4>Email</h4>
+                        <a href="mailto:ventas@inderco.com.ar">ventas@inderco.com.ar</a>
+                    </div>
+                </div>
+
+                <div class="info-bloque">
+                    <div class="info-bloque-icono">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-bloque-texto">
+                        <h4>Horario de atención</h4>
+                        <p>Lunes a Viernes: 8:00 — 17:00 hs.<br>Sábados: 8:00 — 12:00 hs.</p>
+                    </div>
+                </div>
+
+                <div class="redes-contacto">
+                    <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/542344427549" target="_blank" title="WhatsApp"><i
+                            class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <div class="formulario-contacto">
+                <h2 class="seccion-titulo-contacto">Envianos un Mensaje</h2>
+                <p class="seccion-subtitulo-contacto">Completá el formulario y nos comunicamos a la brevedad.</p>
+
+                <form action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-grupo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-grupo">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+54 ...">
+                        </div>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="empresa">Empresa / Establecimiento</label>
+                        <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa (opcional)">
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="producto">Producto de interés</label>
+                        <select id="producto" name="producto">
+                            <option value="">Seleccioná un producto...</option>
+                            <option value="extraccion">Equipos de Extracción</option>
+                            <option value="fraccionado">Equipos de Fraccionado</option>
+                            <option value="homogenizado">Equipos de Homogeneizado</option>
+                            <option value="accesorios">Accesorios</option>
+                            <option value="otro">Otro / Consulta general</option>
+                        </select>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Contanos en qué podemos ayudarte..."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">
+                        <i class="fas fa-paper-plane"></i> Enviar mensaje
+                    </button>
+                </form>
+
+                <a href="https://wa.me/542344427549?text=Hola%2C%20me%20interesa%20recibir%20información%20sobre%20sus%20productos."
+                    target="_blank" class="btn-whatsapp-contacto">
+                    <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Contactar por WhatsApp
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="mapa-seccion">
+        <div class="mapa-contenedor">
+            <h2>¿Dónde estamos?</h2>
+            <a href="https://maps.app.goo.gl/EA14rdeKvow57ZfUA" target="_blank"
+                style="display: block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <iframe class="mapa-iframe"
+                    src="https://maps.google.com/maps?q=INDERCO+Junin+Buenos+Aires+Argentina&output=embed&hl=es"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    style="pointer-events: none;">
+                </iframe>
+                <div style="position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+                    background-color: var(--color-primario); color: white; padding: 12px 28px;
+                    border-radius: 6px; font-weight: 700; font-size: 0.95rem; font-family: 'Montserrat', sans-serif;
+                    text-transform: uppercase; letter-spacing: 1px; white-space: nowrap;
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                    <i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Abrir en Google Maps
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer class="pie-pagina">
+        <div class="contenedor pie-cont">
+            <p>&copy; 2024 INDERCO S.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
