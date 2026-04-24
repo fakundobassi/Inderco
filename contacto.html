@@ -384,7 +384,11 @@
                 <h2 class="seccion-titulo-contacto">Envianos un Mensaje</h2>
                 <p class="seccion-subtitulo-contacto">Completá el formulario y nos comunicamos a la brevedad.</p>
 
-                <form action="#" method="POST">
+                <div id="form-feedback"
+                    style="display:none; padding: 1rem; border-radius: 6px; margin-bottom: 1rem; font-weight: 600; text-align: center;">
+                </div>
+
+                <form id="form-contacto" action="#" method="POST">
                     <div class="form-row">
                         <div class="form-grupo">
                             <label for="nombre">Nombre</label>
@@ -473,6 +477,56 @@
     </footer>
 
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // ── EmailJS ──────────────────────────────────────────────
+        var EMAILJS_PUBLIC_KEY = '7PCVw0hQ04O-MprpI'; // ← reemplazá con tu Public Key de EmailJS
+        var EMAILJS_TEMPLATE_ID = 'template_t9xqqfc'; // ← reemplazá con tu Template ID de EmailJS
+        var EMAILJS_SERVICE_ID = 'service_0t2n6oe';
+
+        emailjs.init({
+            publicKey: EMAILJS_PUBLIC_KEY
+        });
+
+        var form = document.getElementById('form-contacto');
+        var feedback = document.getElementById('form-feedback');
+        var btnEnviar = form ? form.querySelector('.btn-enviar') : null;
+
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Estado de carga
+                btnEnviar.disabled = true;
+                btnEnviar.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                feedback.style.display = 'none';
+
+                emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
+                    .then(function () {
+                        feedback.style.display = 'block';
+                        feedback.style.background = '#d4edda';
+                        feedback.style.color = '#155724';
+                        feedback.style.border = '1px solid #c3e6cb';
+                        feedback.textContent =
+                            '¡Mensaje enviado correctamente! Nos pondremos en contacto a la brevedad.';
+                        form.reset();
+                    })
+                    .catch(function (error) {
+                        feedback.style.display = 'block';
+                        feedback.style.background = '#f8d7da';
+                        feedback.style.color = '#721c24';
+                        feedback.style.border = '1px solid #f5c6cb';
+                        feedback.textContent =
+                            'Hubo un error al enviar el mensaje. Por favor intentá de nuevo o contactanos por WhatsApp.';
+                        console.error('EmailJS error:', error);
+                    })
+                    .finally(function () {
+                        btnEnviar.disabled = false;
+                        btnEnviar.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar mensaje';
+                    });
+            });
+        }
+    </script>
 </body>
 
 </html>
