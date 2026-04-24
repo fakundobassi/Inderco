@@ -99,3 +99,65 @@ if (slides.length > 0) {
 if (typeof AOS !== 'undefined') {
     AOS.init({ duration: 800, once: true, offset: 100 });
 }
+
+function crearCarrusel(imagenes, altText) {
+    var wrap = document.createElement('div');
+    wrap.className = 'prod-carrusel';
+
+    imagenes.forEach(function (src, i) {
+        var slide = document.createElement('div');
+        slide.className = 'prod-carrusel-slide' + (i === 0 ? ' activo' : '');
+        var img = document.createElement('img');
+        img.src = src;
+        img.alt = altText || '';
+        img.loading = 'lazy';
+        slide.appendChild(img);
+        wrap.appendChild(slide);
+    });
+
+    if (imagenes.length <= 1) return wrap;
+
+    var prevBtn = document.createElement('button');
+    prevBtn.className = 'prod-carr-btn prev';
+    prevBtn.innerHTML = '&#8249;';
+    prevBtn.setAttribute('aria-label', 'Anterior');
+
+    var nextBtn = document.createElement('button');
+    nextBtn.className = 'prod-carr-btn next';
+    nextBtn.innerHTML = '&#8250;';
+    nextBtn.setAttribute('aria-label', 'Siguiente');
+
+    var dotsDiv = document.createElement('div');
+    dotsDiv.className = 'prod-carr-dots';
+
+    var allSlides = wrap.querySelectorAll('.prod-carrusel-slide');
+    var dots = [];
+    imagenes.forEach(function (_, i) {
+        var dot = document.createElement('span');
+        dot.className = 'prod-carr-dot' + (i === 0 ? ' activo' : '');
+        dots.push(dot);
+        dotsDiv.appendChild(dot);
+    });
+
+    wrap.appendChild(prevBtn);
+    wrap.appendChild(nextBtn);
+    wrap.appendChild(dotsDiv);
+
+    var current = 0;
+
+    function irA(n) {
+        allSlides[current].classList.remove('activo');
+        dots[current].classList.remove('activo');
+        current = (n + imagenes.length) % imagenes.length;
+        allSlides[current].classList.add('activo');
+        dots[current].classList.add('activo');
+    }
+
+    prevBtn.addEventListener('click', function (e) { e.stopPropagation(); irA(current - 1); });
+    nextBtn.addEventListener('click', function (e) { e.stopPropagation(); irA(current + 1); });
+    dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function (e) { e.stopPropagation(); irA(i); });
+    });
+
+    return wrap;
+}

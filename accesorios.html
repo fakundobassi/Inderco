@@ -63,7 +63,7 @@
             <span class="modal-cerrar">&times;</span>
             <div class="modal-body">
                 <div class="modal-imagen-principal">
-                    <img id="modalImagen" src="" alt="">
+                    <div id="modalCarruselContenedor"></div>
                 </div>
                 <div class="modal-info">
                     <h2 id="modalTitulo"></h2>
@@ -81,7 +81,8 @@
     <script src="app.js"></script>
     <script>
         const productosProductos = {
-            "1.jpg": {
+            "1.png": {
+
                 titulo: "API LIFTER",
                 modelo: "APL",
                 funcion: "Transporte y elevación de cargas en el apiario con hasta 100 kg de capacidad.",
@@ -95,7 +96,7 @@
                     "Ruedas con cubiertas y cámaras."
                 ]
             },
-            "2.jpg": {
+            "2.png": {
                 titulo: "LAVA BOTAS Y MANOS COMBINADO",
                 modelo: "LBM",
                 funcion: "Higienización combinada de botas y manos en un único equipo.",
@@ -110,7 +111,7 @@
                     "Profundidad: 53 cm."
                 ]
             },
-            "3.jpg": {
+            "3.png": {
                 titulo: "CARRETILLA PARA TAMBORES",
                 modelo: "CTR",
                 funcion: "Transporte y manipulación de tambores con capacidad de hasta 700 kg.",
@@ -139,7 +140,7 @@
                     "Rango de temperatura: 0° - 110°C (se recomienda no superar los 40°C para el derretimiento de miel)."
                 ]
             },
-            "5.jpg": {
+            "5.png": {
                 titulo: "LAVA BOTAS",
                 modelo: "",
                 funcion: "",
@@ -147,7 +148,7 @@
                 descripcionEquipo: "",
                 especificacionesTecnicas: []
             },
-            "6.jpg": {
+            "6.png": {
                 titulo: "LAVA MANOS",
                 modelo: "",
                 funcion: "",
@@ -155,7 +156,7 @@
                 descripcionEquipo: "",
                 especificacionesTecnicas: []
             },
-            "7.jpg": {
+            "7.png": {
                 titulo: "DERRETIDOR PARA BALDE",
                 modelo: "DERT",
                 funcion: "Calentar la miel solidificada por enfriamiento ambiental, para facilitar su fraccionado y/o trasiego.",
@@ -177,7 +178,7 @@
                 descripcionEquipo: "",
                 especificacionesTecnicas: []
             },
-            "9.jpg": {
+            "9.png": {
                 titulo: "PEINE",
                 modelo: "",
                 funcion: "",
@@ -185,7 +186,7 @@
                 descripcionEquipo: "",
                 especificacionesTecnicas: []
             },
-            "10.jpg": {
+            "10.png": {
                 titulo: "GRIFO GUILLOTINA 1 1/2\" Y 2\" (PULGADAS)",
                 modelo: "",
                 funcion: "",
@@ -198,16 +199,16 @@
         // Función para abrir modal
         function abrirModal(nombreImagen) {
             const modal = document.getElementById('modalProducto');
-            const modalImagen = document.getElementById('modalImagen');
+            const modalCarruselContenedor = document.getElementById('modalCarruselContenedor');
             const modalTitulo = document.getElementById('modalTitulo');
             const modalDescripcion = document.getElementById('modalDescripcion');
             const btnContacto = document.getElementById('btnContactoModal');
 
             const producto = productosProductos[nombreImagen];
-            const rutaImagen = `img/accesorios/${nombreImagen}`;
-
-            modalImagen.src = rutaImagen;
-            modalImagen.alt = producto.titulo;
+            const imagenesMod = producto.imagenes ?
+                producto.imagenes.map(i => `img/accesorios/${i}`) : [`img/accesorios/${nombreImagen}`];
+            modalCarruselContenedor.innerHTML = '';
+            modalCarruselContenedor.appendChild(crearCarrusel(imagenesMod, producto.titulo));
             modalTitulo.textContent = producto.titulo;
 
             let contenido = '';
@@ -254,47 +255,44 @@
             modal.style.display = 'block';
         }
 
-        // Función para cerrar modal
-        document.addEventListener('DOMContentLoaded', () => {
-            const modal = document.getElementById('modalProducto');
-            const span = document.getElementsByClassName('modal-cerrar')[0];
-
-            span.onclick = function () {
-                modal.style.display = 'none';
-            }
-
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            }
+        // Cerrar modal
+        const _modal = document.getElementById('modalProducto');
+        document.getElementsByClassName('modal-cerrar')[0].onclick = () => _modal.style.display = 'none';
+        window.addEventListener('click', e => {
+            if (e.target === _modal) _modal.style.display = 'none';
         });
 
-        // Cargar productos dinámicamente
-        document.addEventListener('DOMContentLoaded', () => {
-            const gridMaquinas = document.getElementById('grid-maquinas');
+        // Cargar productos
+        const gridMaquinas = document.getElementById('grid-maquinas');
+        Object.keys(productosProductos).forEach(nombreImagen => {
+            const producto = productosProductos[nombreImagen];
+            const rutaImagen = `img/accesorios/${nombreImagen}`;
+            const mensajeWA = encodeURIComponent(
+                `Hola, me interesa consultar sobre: ${producto.titulo}${producto.modelo ? ` (Modelo: ${producto.modelo})` : ''}. ¿Podrían proporcionarme información y presupuesto?`
+            );
+            const urlWA = `https://wa.me/542344427549?text=${mensajeWA}`;
+            const imagenes = producto.imagenes ?
+                producto.imagenes.map(i => `img/accesorios/${i}`) : [rutaImagen];
 
-            Object.keys(productosProductos).forEach(nombreImagen => {
-                const producto = productosProductos[nombreImagen];
-                const rutaImagen = `img/accesorios/${nombreImagen}`;
-
-                const tarjeta = document.createElement('div');
-                tarjeta.className = 'tarjeta-maquina';
-                tarjeta.innerHTML = `
-                    <div class="imagen-maquina">
-                        <img src="${rutaImagen}" alt="${producto.titulo}">
-                    </div>
-                    <div class="producto-contenido">
-                        <h3 class="producto-titulo">${producto.titulo}</h3>
-                        <p class="producto-modelo"><strong>Modelo:</strong> ${producto.modelo}</p>
-                        <p class="producto-funcion"><strong>Función:</strong> ${producto.funcion}</p>
-                    </div>
-                    <button class="btn-mas-informacion" onclick="abrirModal('${nombreImagen}')">
-                        <i class="fas fa-info-circle"></i> Más Información
-                    </button>
-                `;
-                gridMaquinas.appendChild(tarjeta);
-            });
+            const tarjeta = document.createElement('div');
+            tarjeta.className = 'tarjeta-maquina';
+            tarjeta.addEventListener('click', () => abrirModal(nombreImagen));
+            tarjeta.appendChild(crearCarrusel(imagenes, producto.titulo));
+            tarjeta.insertAdjacentHTML('beforeend', `
+                <div class="producto-contenido">
+                    <h3 class="producto-titulo">${producto.titulo}</h3>
+                    <p class="producto-modelo"><strong>Modelo:</strong> ${producto.modelo}</p>
+                    <p class="producto-funcion"><strong>Función:</strong> ${producto.funcion}</p>
+                </div>
+                <button class="btn-mas-informacion">
+                    <i class="fas fa-info-circle"></i> Más Información
+                </button>
+                <a class="btn-whatsapp" href="${urlWA}" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                </a>
+            `);
+            tarjeta.querySelector('.btn-whatsapp').addEventListener('click', e => e.stopPropagation());
+            gridMaquinas.appendChild(tarjeta);
         });
     </script>
 </body>

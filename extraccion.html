@@ -68,7 +68,7 @@
             <span class="modal-cerrar">&times;</span>
             <div class="modal-body">
                 <div class="modal-imagen-principal">
-                    <img id="modalImagen" src="" alt="">
+                    <div id="modalCarruselContenedor"></div>
                 </div>
                 <div class="modal-info">
                     <h2 id="modalTitulo"></h2>
@@ -87,7 +87,8 @@
     <script>
         // productos para apicultores industriales
         const productosExtraccion = {
-            "1.jpg": {
+            "1.png": {
+                imagenes: ["1.png", "1.1.png"],
                 titulo: "DESOPERCULADORA ELÉCTRICA (DAER)",
                 modelo: "DAER",
                 funcion: "Cortar el opérculo excedente del panal para facilitar la salida de la miel contenida en su interior.",
@@ -104,7 +105,8 @@
                     "Capacidad de trabajo: De 300 a 1200 cuadros/hora."
                 ]
             },
-            "2.jpg": {
+            "2.png": {
+                imagenes: ["2.png", "2.1.png"],
                 titulo: "DESOPERCULADORA ELÉCTRICA (DAE)",
                 modelo: "DAE",
                 funcion: "Cortar el opérculo excedente del panal para facilitar la salida de la miel contenida en su interior.",
@@ -121,7 +123,8 @@
                     "Capacidad de trabajo: De 300 a 1200 cuadros/hora."
                 ]
             },
-            "3.jpg": {
+            "3.png": {
+                imagenes: ["3.png", "3.1.png"],
                 titulo: "PRENSA DE OPÉRCULO (MC)",
                 modelo: "PRMC",
                 funcion: "Tratamiento del opérculo para separación de cera y miel, mediante compresión y sin aplicación de temperatura.",
@@ -137,7 +140,8 @@
                     "Capacidad de trabajo: Hasta 300 cuadros/hora."
                 ]
             },
-            "4.jpg": {
+            "4.png": {
+                imagenes: ["4.png", "4.1.png"],
                 titulo: "PRENSA DE OPERCULO (MG)",
                 modelo: "MG",
                 funcion: "Tratamiento del opérculo para separación de cera y miel, mediante compresión y sin aplicación de temperatura.",
@@ -153,7 +157,8 @@
                     "Capacidad de trabajo: Hasta 550 cuadros/hora."
                 ]
             },
-            "5.jpg": {
+            "5.png": {
+                imagenes: ["5.png", "5.1.png"],
                 titulo: "FUNDIDOR DE OPÉRCULO (MC)",
                 modelo: "BFMC",
                 funcion: "Separación de miel y cera por medio de aplicación de temperatura y derretimiento del opérculo.",
@@ -169,7 +174,8 @@
                     "Capacidad de trabajo: Hasta 500 cuadros/hora."
                 ]
             },
-            "6.jpg": {
+            "6.png": {
+                imagenes: ["6.png", "6.1.png"],
                 titulo: "FUNDIDOR DE OPÉRCULO (MG)",
                 modelo: "BFMG",
                 funcion: "Separación de miel y cera por medio de aplicación de temperatura y derretimiento del opérculo.",
@@ -186,6 +192,7 @@
                 ]
             },
             "7.jpg": {
+                imagenes: ["7.png", "7.1.png"],
                 titulo: "FUNDIDOR DE OPÉRCULO ELÉCTRICO (MC)",
                 modelo: "BFEMC",
                 funcion: "Separación de miel y cera por medio de aplicación de temperatura y derretimiento del opérculo.",
@@ -208,7 +215,8 @@
                     "Capacidad de trabajo: Hasta 500 cuadros/hora."
                 ]
             },
-            "8.jpg": {
+            "8.2.png": {
+                imagenes: ["8.2.png", "8.1.png"],
                 titulo: "FUNDIDOR DE OPÉRCULO ELÉCTRICO (MG)",
                 modelo: "BFEMG",
                 funcion: "Separación de miel y cera por medio de aplicación de temperatura y derretimiento del opérculo.",
@@ -231,7 +239,8 @@
                     "Capacidad de trabajo: Hasta 800 cuadros/hora."
                 ]
             },
-            "9.jpg": {
+            "9.png": {
+                imagenes: ["9.1.png", "9.jpg"],
                 titulo: "EXTRACTOR DE 42 CUADROS CON CANASTOS Y MESA",
                 modelo: "E42",
                 funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -247,7 +256,8 @@
                     "Incluye 1 (una) mesa de alimentación porta-canastos y 1 (un) juego doble de canastos (6 canastos)."
                 ]
             },
-            "10.jpg": {
+            "10.png": {
+                imagenes: ["10.png", "10.1.png"],
                 titulo: "EXTRACTOR PARA 80 CUADROS LINEA ESTANDAR",
                 modelo: "E080STD",
                 funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -263,7 +273,8 @@
                     "Incluye una mesa de carga, una mesa de descarga con pendiente y 1 juego doble de canastos (8 canastos)."
                 ]
             },
-            "11.jpg": {
+            "11.png": {
+                imagenes: ["11.png", "11.1.png"],
                 titulo: "EXTRACTOR PARA 80 CUADROS LINEA PREMIUM",
                 modelo: "E080",
                 funcion: "Extraer miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -279,7 +290,8 @@
                     "Incluye una mesa de carga, una mesa de descarga con pendiente y 1 juego doble de canastos (8 canastos)."
                 ]
             },
-            "12.jpg": {
+            "12.png": {
+                imagenes: ["12.png", "12.1.png"],
                 titulo: "EXTRACTOR PARA 120 CUADROS",
                 modelo: "E120",
                 funcion: "Extraer miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -295,7 +307,8 @@
                     "Incluye una mesa de carga, una mesa de descarga con pendiente y un juego doble de canastos (8 canastos)."
                 ]
             },
-            "13.jpg": {
+            "13.png": {
+                imagenes: ["13.png", "13.1.png"],
                 titulo: "EXTRACTOR PARA 160 CUADROS DE MEDIA ALZA",
                 modelo: "E160",
                 funcion: "Extraer miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -311,7 +324,8 @@
                     "Incluye una mesa de carga, una mesa de descarga con pendiente y 1 juego doble de canastos (8 canastos)."
                 ]
             },
-            "14.jpg": {
+            "14.png": {
+                imagenes: ["14.png", "14.1.png"],
                 titulo: "EXTRACTOR PARA 240 CUADROS DE MEDIA ALZA",
                 modelo: "E240",
                 funcion: "Extraer miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -327,7 +341,8 @@
                     "Incluye una mesa de carga, una mesa de descarga con pendiente y un juego doble de canastos (8 canastos)."
                 ]
             },
-            "15.jpg": {
+            "15.png": {
+                imagenes: ["15.png", "15.1.png"],
                 titulo: "BOMBA ELEVADORA DE MIEL (2″)",
                 modelo: "BEM",
                 funcion: "Elevación de miel desde la fosa hasta el tanque decantador.",
@@ -347,7 +362,8 @@
                     "Dimensiones de boca: Ø 2 pulgadas."
                 ]
             },
-            "16.jpg": {
+            "16.png": {
+                imagenes: ["16.png", "16.1.png"],
                 titulo: "BOMBA 1 1/4'' CON FILTRO",
                 modelo: "BCF",
                 funcion: "Aspirar la miel desde un tambor, decantador o cualquier otro recipiente de almacenaje, y direccionarla previo filtrado.",
@@ -365,7 +381,8 @@
                     "Consumo: 5,8 amperes."
                 ]
             },
-            "17.jpg": {
+            "17.png": {
+                imagenes: ["17.png", "17.1.png", "17.2.png"],
                 titulo: "TANQUES DECANTADORES",
                 modelo: "D100",
                 funcion: "Permitir el proceso de decantación de la miel recolectada.",
@@ -378,7 +395,8 @@
                     "3000 Kg — Alto: 2250 mm | Diámetro: 1100 mm | Capacidad: 3000 Kg."
                 ]
             },
-            "18.jpg": {
+            "18.png": {
+                imagenes: ["18.png", "18.1.png", "18.2.png", "18.3.png"],
                 titulo: "",
                 modelo: "",
                 funcion: "",
@@ -386,7 +404,8 @@
                 descripcionEquipo: "",
                 especificacionesTecnicas: []
             },
-            "19.jpg": {
+            "19.png": {
+                imagenes: ["19.png", "19.1.png"],
                 titulo: "FOSA EMBUTIBLE PARA EXTRACTOR E120",
                 modelo: "FE12",
                 funcion: "Recolectar la miel que evacúa desde la Prensa o Fundidor de Opérculo y del Extractor para 120 cuadros (E120), para su posterior derivación a Tanques Decantadores.",
@@ -399,7 +418,8 @@
                     "Capacidad: 1.500 Kg. de miel."
                 ]
             },
-            "20.jpg": {
+            "20.png": {
+                imagenes: ["20.png", "20.1.png"],
                 titulo: "FOSA EMBUTIBLE PARA EXTRACTOR E80",
                 modelo: "FE80",
                 funcion: "Recolectar la miel que evacúa desde la Prensa o Fundidor de Opérculo y del Extractor para 80 cuadros (E80), para su posterior derivación a Tanques Decantadores.",
@@ -412,7 +432,8 @@
                     "Capacidad: 1.000 Kg. de miel."
                 ]
             },
-            "21.jpg": {
+            "21.png": {
+                imagenes: ["21.png", "21.1.png"],
                 titulo: "CREMADORA DE MIEL",
                 modelo: "CREM 300",
                 funcion: "Romper los cristales de la miel para lograr una consistencia cremosa.",
@@ -427,7 +448,8 @@
                     "Potencia del motor: 3 HP."
                 ]
             },
-            "22.jpg": {
+            "22.png": {
+                imagenes: ["22.png", "22.1.png"],
                 titulo: "LAVADORA DE CUADROS CON CALDERA A GAS",
                 modelo: "LAVG",
                 funcion: "Fundir la totalidad de la cera de los cuadros (marcos de panales), recuperándola mediante la aplicación combinada de fuerza centrífuga y del vapor de agua a presión suministrado por la Caldera.",
@@ -450,7 +472,8 @@
                     "Capacidad (mechero): 50.000 kCal."
                 ]
             },
-            "23.jpg": {
+            "23.png": {
+                imagenes: ["23.png", "23.1.png"],
                 titulo: "FUNDIDOR DE PELLETS",
                 modelo: "E080",
                 funcion: "Fundir opérculo prensado y lavar marcos y rejillas excluidoras.",
@@ -480,7 +503,8 @@
                     "Consumo de agua: 40 lts."
                 ]
             },
-            "24.jpg": {
+            "24.png": {
+                imagenes: ["24.png", "24.1.png"],
                 titulo: "BOMBA ELEVADORA DE MIEL (1 1/4\")",
                 modelo: "BEM114",
                 funcion: "Elevación de miel desde la fosa hasta el tanque decantador.",
@@ -515,7 +539,8 @@
 
 
         const productosExtraccionPequenos = {
-            "25.jpg": {
+            "25.png": {
+                imagenes: ["25.png", "25.1.png"],
                 titulo: "DESOPERCULADORA ESTÁNDAR",
                 modelo: "DAE STD",
                 funcion: "Cortar el opérculo excedente del panal para facilitar la salida de la miel contenida en su interior.",
@@ -531,7 +556,8 @@
                     "Control temperatura digital: 0 a 150 grados."
                 ]
             },
-            "26.jpg": {
+            "26.png": {
+                imagenes: ["26.png", "26.1.png"],
                 titulo: "CUCHILLO DESOPERCULADOR CON BATEA",
                 modelo: "CDB",
                 funcion: "Desopercular panales manualmente mediante cuchillo eléctrico en 'V' con batea de recolección de miel y opérculo.",
@@ -549,7 +575,8 @@
                     "Peso: 30 kg."
                 ]
             },
-            "27.jpg": {
+            "27.png": {
+                imagenes: ["27.png", "27.1.png"],
                 titulo: "PRENSA DE OPÉRCULO (CH)",
                 modelo: "PRCH",
                 funcion: "Tratamiento del opérculo para la separación de cera y miel, mediante compresión y sin aplicación de temperatura.",
@@ -565,7 +592,8 @@
                     "Capacidad de trabajo: hasta 150 cuadros/hora."
                 ]
             },
-            "28.jpg": {
+            "28.png": {
+                imagenes: ["28.png", "28.1.png"],
                 titulo: "EXTRACTOR DE 42 CUADROS LÍNEA ESTÁNDAR",
                 modelo: "E42STD",
                 funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -582,7 +610,8 @@
                     "Diámetro niple salida: 38,1 mm (1 1/2 pulgadas)."
                 ]
             },
-            "29.jpg": {
+            "29.png": {
+                imagenes: ["29.png", "29.1.png"],
                 titulo: "EXTRACTOR DE 20 CUADROS ESTÁNDAR",
                 modelo: "E20STD",
                 funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -601,7 +630,8 @@
                     "Diámetro niple salida: 38,1 mm (1 1/2 pulgadas)."
                 ]
             },
-            "30.jpg": {
+            "30.png": {
+                imagenes: ["30.png", "30.1.png"],
                 titulo: "EXTRACTOR DE 8 CUADROS ESTÁNDAR Y 12 DE MEDIA ALZA",
                 modelo: "E8-12STD",
                 funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -620,7 +650,8 @@
                     "Diámetro niple salida: 38,1 mm (1 1/2 pulgadas)."
                 ]
             },
-            "31.jpg": {
+            "31.png": {
+                imagenes: ["31.png", "31.1.png"],
                 titulo: "BATEA DE DESOPERCULADO",
                 modelo: "BD",
                 funcion: "Recolectar el opérculo y la miel resultante del proceso de desoperculado manual.",
@@ -637,7 +668,8 @@
                     "Espesor patas y bastidor: 2,5 mm."
                 ]
             },
-            "32.jpg": {
+            "32.png": {
+                imagenes: ["32.png", "32.1.png"],
                 titulo: "FUNDIDOR DE PELLETS",
                 modelo: "E080",
                 funcion: "Fundir opérculo prensado y lavar marcos y rejillas excluidoras.",
@@ -667,7 +699,8 @@
                     "Consumo de agua: 40 lts."
                 ]
             },
-            "33.jpg": {
+            "33.png": {
+                imagenes: ["33.png", "33.1.png", "33.2.png"],
                 titulo: "DECANTADOR DE 50 KG",
                 modelo: "",
                 funcion: "",
@@ -675,7 +708,8 @@
                 descripcionEquipo: "",
                 especificacionesTecnicas: []
             },
-            "34.jpg": {
+            "34.png": {
+                imagenes: ["34.png", "34.1.png", "34.2.png"],
                 titulo: "DECANTADOR DE 600 KG",
                 modelo: "",
                 funcion: "",
@@ -693,16 +727,16 @@
         // Función para abrir modal
         function abrirModal(nombreImagen) {
             const modal = document.getElementById('modalProducto');
-            const modalImagen = document.getElementById('modalImagen');
+            const modalCarruselContenedor = document.getElementById('modalCarruselContenedor');
             const modalTitulo = document.getElementById('modalTitulo');
             const modalDescripcion = document.getElementById('modalDescripcion');
             const btnContacto = document.getElementById('btnContactoModal');
 
             const producto = todosLosProductos[nombreImagen];
-            const rutaImagen = `img/extraccion/${nombreImagen}`;
-
-            modalImagen.src = rutaImagen;
-            modalImagen.alt = producto.titulo;
+            const imagenesMod = producto.imagenes ?
+                producto.imagenes.map(i => `img/extraccion/${i}`) : [`img/extraccion/${nombreImagen}`];
+            modalCarruselContenedor.innerHTML = '';
+            modalCarruselContenedor.appendChild(crearCarrusel(imagenesMod, producto.titulo));
             modalTitulo.textContent = producto.titulo;
 
             let contenido = '';
@@ -770,21 +804,30 @@
             const grid = document.getElementById(gridId);
             Object.entries(productos).forEach(([nombreImagen, producto]) => {
                 const rutaImagen = `img/extraccion/${nombreImagen}`;
+                const mensajeWA = encodeURIComponent(
+                    `Hola, me interesa consultar sobre: ${producto.titulo}${producto.modelo ? ` (Modelo: ${producto.modelo})` : ''}. ¿Podrían proporcionarme información y presupuesto?`
+                );
+                const urlWA = `https://wa.me/542344427549?text=${mensajeWA}`;
+                const imagenes = producto.imagenes ?
+                    producto.imagenes.map(i => `img/extraccion/${i}`) : [rutaImagen];
                 const tarjeta = document.createElement('div');
                 tarjeta.className = 'tarjeta-maquina';
-                tarjeta.innerHTML = `
-                    <div class="imagen-maquina">
-                        <img src="${rutaImagen}" alt="${producto.titulo}">
-                    </div>
+                tarjeta.addEventListener('click', () => abrirModal(nombreImagen));
+                tarjeta.appendChild(crearCarrusel(imagenes, producto.titulo));
+                tarjeta.insertAdjacentHTML('beforeend', `
                     <div class="producto-contenido">
                         <h3 class="producto-titulo">${producto.titulo}</h3>
                         <p class="producto-modelo"><strong>Modelo:</strong> ${producto.modelo}</p>
                         <p class="producto-funcion"><strong>Función:</strong> ${producto.funcion}</p>
                     </div>
-                    <button class="btn-mas-informacion" onclick="abrirModal('${nombreImagen}')">
+                    <button class="btn-mas-informacion">
                         <i class="fas fa-info-circle"></i> Más Información
                     </button>
-                `;
+                    <a class="btn-whatsapp" href="${urlWA}" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                    </a>
+                `);
+                tarjeta.querySelector('.btn-whatsapp').addEventListener('click', e => e.stopPropagation());
                 grid.appendChild(tarjeta);
             });
         }
