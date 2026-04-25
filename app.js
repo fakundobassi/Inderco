@@ -100,6 +100,60 @@ if (typeof AOS !== 'undefined') {
     AOS.init({ duration: 800, once: true, offset: 100 });
 }
 
+// Abejas orbitando en mobile alrededor del botón BeeDolce
+(function () {
+    var btn = document.querySelector('.btn-beedolce');
+    if (!btn) return;
+    var configs = [
+        { anim: 'abejaOrbita1', dur: '2.6s', delay: '0s'    },
+        { anim: 'abejaOrbita2', dur: '3.2s', delay: '-0.8s' },
+        { anim: 'abejaOrbita3', dur: '2.0s', delay: '-1.4s' }
+    ];
+    configs.forEach(function (c) {
+        var a = document.createElement('span');
+        a.className = 'abeja-btn';
+        a.textContent = '🐝';
+        a.style.animationName = c.anim;
+        a.style.animationDuration = c.dur;
+        a.style.animationDelay = c.delay;
+        btn.appendChild(a);
+    });
+}());
+
+// Efecto estrellas al pasar el mouse por el botón BeeDolce
+(function () {
+    var chars = ['★', '✦', '✧', '✨', '⭐'];
+    var colors = ['#FBBC04', '#FFD700', '#FFA500', '#ffffff', '#D9A441', '#ffe066'];
+    var cooldown = false;
+
+    document.addEventListener('mouseenter', function (e) {
+        var btn = e.target.closest('.btn-beedolce');
+        if (!btn || cooldown) return;
+        cooldown = true;
+        setTimeout(function () { cooldown = false; }, 400);
+
+        for (var i = 0; i < 12; i++) {
+            (function (delay) {
+                setTimeout(function () {
+                    var star = document.createElement('span');
+                    star.className = 'estrella-beedolce';
+                    star.textContent = chars[Math.floor(Math.random() * chars.length)];
+                    star.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    star.style.fontSize = (0.55 + Math.random() * 0.75) + 'rem';
+                    star.style.left = (10 + Math.random() * 80) + '%';
+                    star.style.top = (10 + Math.random() * 80) + '%';
+                    var angle = Math.random() * Math.PI * 2;
+                    var dist = 35 + Math.random() * 45;
+                    star.style.setProperty('--tx', (Math.cos(angle) * dist).toFixed(1) + 'px');
+                    star.style.setProperty('--ty', (Math.sin(angle) * dist).toFixed(1) + 'px');
+                    btn.appendChild(star);
+                    star.addEventListener('animationend', function () { star.remove(); });
+                }, delay);
+            })(i * 45);
+        }
+    }, true);
+}());
+
 function crearCarrusel(imagenes, altText) {
     var wrap = document.createElement('div');
     wrap.className = 'prod-carrusel';
@@ -158,6 +212,18 @@ function crearCarrusel(imagenes, altText) {
     dots.forEach(function (dot, i) {
         dot.addEventListener('click', function (e) { e.stopPropagation(); irA(i); });
     });
+
+    var touchStartX = 0;
+    wrap.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    wrap.addEventListener('touchend', function (e) {
+        var diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) {
+            e.stopPropagation();
+            irA(diff > 0 ? current + 1 : current - 1);
+        }
+    }, { passive: true });
 
     return wrap;
 }

@@ -1487,3 +1487,60 @@ ul {
         right: 20px;
     }
 }
+
+/* =========================================
+   EFECTO ESTRELLAS + ABEJAS BEEDOLCE
+========================================= */
+.btn-beedolce {
+    position: relative;
+    overflow: visible;
+}
+
+/* Abejas orbitando (solo mobile) */
+.abeja-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -0.55rem;
+    margin-left: -0.55rem;
+    font-size: 1rem;
+    pointer-events: none;
+    z-index: 300;
+    display: none;
+    will-change: transform;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes abejaOrbita1 {
+    from { transform: rotate(0deg)   translateX(48px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(48px) rotate(-360deg); }
+}
+@keyframes abejaOrbita2 {
+    from { transform: rotate(130deg)  translateX(42px) rotate(-130deg); }
+    to   { transform: rotate(490deg)  translateX(42px) rotate(-490deg); }
+}
+@keyframes abejaOrbita3 {
+    from { transform: rotate(250deg)  translateX(54px) rotate(-250deg); }
+    to   { transform: rotate(610deg)  translateX(54px) rotate(-610deg); }
+}
+
+@media (max-width: 768px) {
+    .abeja-btn {
+        display: block;
+    }
+}
+
+@keyframes estrellaVolar {
+    0%   { opacity: 1; transform: translate(0, 0) scale(1) rotate(0deg); }
+    100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0.1) rotate(200deg); }
+}
+
+.estrella-beedolce {
+    position: absolute;
+    pointer-events: none;
+    animation: estrellaVolar 0.75s ease-out forwards;
+    z-index: 100;
+    line-height: 1;
+    user-select: none;
+}

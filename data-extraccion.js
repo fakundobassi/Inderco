@@ -1,5 +1,6 @@
 window.dataExtraccion = {
-            "1.jpg": {
+            "1.png": {
+                imagenes: ["1.png", "1.1.png"],
                 titulo: "DESOPERCULADORA ELÉCTRICA (DAER)",
                 modelo: "DAER",
                 funcion: "Cortar el opérculo excedente del panal para facilitar la salida de la miel contenida en su interior.",
@@ -16,7 +17,8 @@ window.dataExtraccion = {
                     "Capacidad de trabajo: De 300 a 1200 cuadros/hora."
                 ]
             },
-            "2.jpg": {
+            "2.png": {
+                imagenes: ["2.png", "2.1.png"],
                 titulo: "DESOPERCULADORA ELÉCTRICA (DAE)",
                 modelo: "DAE",
                 funcion: "Cortar el opérculo excedente del panal para facilitar la salida de la miel contenida en su interior.",
@@ -33,7 +35,8 @@ window.dataExtraccion = {
                     "Capacidad de trabajo: De 300 a 1200 cuadros/hora."
                 ]
             },
-            "3.jpg": {
+            "3.png": {
+                imagenes: ["3.png", "3.1.png"],
                 titulo: "PRENSA DE OPÉRCULO (MC)",
                 modelo: "PRMC",
                 funcion: "Tratamiento del opérculo para separación de cera y miel, mediante compresión y sin aplicación de temperatura.",
@@ -49,7 +52,8 @@ window.dataExtraccion = {
                     "Capacidad de trabajo: Hasta 300 cuadros/hora."
                 ]
             },
-            "4.jpg": {
+            "4.png": {
+                imagenes: ["4.png", "4.1.png", "4.2.png"],
                 titulo: "PRENSA DE OPERCULO (MG)",
                 modelo: "MG",
                 funcion: "Tratamiento del opérculo para separación de cera y miel, mediante compresión y sin aplicación de temperatura.",
@@ -65,7 +69,8 @@ window.dataExtraccion = {
                     "Capacidad de trabajo: Hasta 550 cuadros/hora."
                 ]
             },
-            "5.jpg": {
+            "5.png": {
+                imagenes: ["5.png", "5.1.png", "5.2.png"],
                 titulo: "FUNDIDOR DE OPÉRCULO (MC)",
                 modelo: "BFMC",
                 funcion: "Separación de miel y cera por medio de aplicación de temperatura y derretimiento del opérculo.",
@@ -81,7 +86,8 @@ window.dataExtraccion = {
                     "Capacidad de trabajo: Hasta 500 cuadros/hora."
                 ]
             },
-            "6.jpg": {
+            "6.png": {
+                imagenes: ["6.png", "6.1.png"],
                 titulo: "FUNDIDOR DE OPÉRCULO (MG)",
                 modelo: "BFMG",
                 funcion: "Separación de miel y cera por medio de aplicación de temperatura y derretimiento del opérculo.",
@@ -97,7 +103,8 @@ window.dataExtraccion = {
                     "Capacidad de trabajo: Hasta 800 cuadros/hora."
                 ]
             },
-            "7.jpg": {
+            "7.png": {
+                imagenes: ["7.png", "7.1.png"],
                 titulo: "FUNDIDOR DE OPÉRCULO ELÉCTRICO (MC)",
                 modelo: "BFEMC",
                 funcion: "Separación de miel y cera por medio de aplicación de temperatura y derretimiento del opérculo.",
@@ -120,7 +127,8 @@ window.dataExtraccion = {
                     "Capacidad de trabajo: Hasta 500 cuadros/hora."
                 ]
             },
-            "8.jpg": {
+            "8.png": {
+                imagenes: ["8.png", "8.2.png"],
                 titulo: "FUNDIDOR DE OPÉRCULO ELÉCTRICO (MG)",
                 modelo: "BFEMG",
                 funcion: "Separación de miel y cera por medio de aplicación de temperatura y derretimiento del opérculo.",
@@ -143,7 +151,8 @@ window.dataExtraccion = {
                     "Capacidad de trabajo: Hasta 800 cuadros/hora."
                 ]
             },
-            "9.jpg": {
+            "9.png": {
+                imagenes: ["9.png", "9.1.png"],
                 titulo: "EXTRACTOR DE 42 CUADROS CON CANASTOS Y MESA",
                 modelo: "E42",
                 funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -159,7 +168,8 @@ window.dataExtraccion = {
                     "Incluye 1 (una) mesa de alimentación porta-canastos y 1 (un) juego doble de canastos (6 canastos)."
                 ]
             },
-            "10.jpg": {
+            "10.png": {
+                imagenes: ["10.png", "10.1.png"],
                 titulo: "EXTRACTOR PARA 80 CUADROS LINEA ESTANDAR",
                 modelo: "E080STD",
                 funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -175,7 +185,8 @@ window.dataExtraccion = {
                     "Incluye una mesa de carga, una mesa de descarga con pendiente y 1 juego doble de canastos (8 canastos)."
                 ]
             },
-            "11.jpg": {
+            "11.png": {
+                imagenes: ["11.png", "11.1.png"],
                 titulo: "EXTRACTOR PARA 80 CUADROS LINEA PREMIUM",
                 modelo: "E080",
                 funcion: "Extraer miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -191,7 +202,8 @@ window.dataExtraccion = {
                     "Incluye una mesa de carga, una mesa de descarga con pendiente y 1 juego doble de canastos (8 canastos)."
                 ]
             },
-            "12.jpg": {
+            "12.png": {
+                imagenes: ["12.png", "12.1.png"],
                 titulo: "EXTRACTOR PARA 120 CUADROS",
                 modelo: "E120",
                 funcion: "Extraer miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -207,7 +219,8 @@ window.dataExtraccion = {
                     "Incluye una mesa de carga, una mesa de descarga con pendiente y un juego doble de canastos (8 canastos)."
                 ]
             },
-            "13.jpg": {
+            "13.png": {
+                imagenes: ["13.png", "13.1.png"],
                 titulo: "EXTRACTOR PARA 160 CUADROS DE MEDIA ALZA",
                 modelo: "E160",
                 funcion: "Extraer miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -223,7 +236,8 @@ window.dataExtraccion = {
                     "Incluye una mesa de carga, una mesa de descarga con pendiente y 1 juego doble de canastos (8 canastos)."
                 ]
             },
-            "14.jpg": {
+            "14.png": {
+                imagenes: ["14.png", "14.1.png"],
                 titulo: "EXTRACTOR PARA 240 CUADROS DE MEDIA ALZA",
                 modelo: "E240",
                 funcion: "Extraer miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -239,7 +253,8 @@ window.dataExtraccion = {
                     "Incluye una mesa de carga, una mesa de descarga con pendiente y un juego doble de canastos (8 canastos)."
                 ]
             },
-            "15.jpg": {
+            "15.png": {
+                imagenes: ["15.png", "15.1.png"],
                 titulo: "BOMBA ELEVADORA DE MIEL (2″)",
                 modelo: "BEM",
                 funcion: "Elevación de miel desde la fosa hasta el tanque decantador.",
@@ -259,7 +274,8 @@ window.dataExtraccion = {
                     "Dimensiones de boca: Ø 2 pulgadas."
                 ]
             },
-            "16.jpg": {
+            "16.png": {
+                imagenes: ["16.png", "16.1.png"],
                 titulo: "BOMBA 1 1/4'' CON FILTRO",
                 modelo: "BCF",
                 funcion: "Aspirar la miel desde un tambor, decantador o cualquier otro recipiente de almacenaje, y direccionarla previo filtrado.",
@@ -277,7 +293,8 @@ window.dataExtraccion = {
                     "Consumo: 5,8 amperes."
                 ]
             },
-            "17.jpg": {
+            "17.png": {
+                imagenes: ["17.png", "17.1.png", "17.2.png"],
                 titulo: "TANQUES DECANTADORES",
                 modelo: "D100",
                 funcion: "Permitir el proceso de decantación de la miel recolectada.",
@@ -290,8 +307,9 @@ window.dataExtraccion = {
                     "3000 Kg — Alto: 2250 mm | Diámetro: 1100 mm | Capacidad: 3000 Kg."
                 ]
             },
-            "18.jpg": {
-                titulo: "",
+            "18.jpeg": {
+                imagenes: ["18.jpeg", "18.1.jpeg", "18.2.jpeg", "18.3.jpeg"],
+                titulo: "SISTEMA DE EXTRACCIÓN COMPLETO",
                 modelo: "",
                 funcion: "",
                 descripcionFuncionamiento: "",
@@ -324,7 +342,7 @@ window.dataExtraccion = {
                     "Capacidad: 1.000 Kg. de miel."
                 ]
             },
-            "21.jpg": {
+            "21.png": {
                 titulo: "CREMADORA DE MIEL",
                 modelo: "CREM 300",
                 funcion: "Romper los cristales de la miel para lograr una consistencia cremosa.",
@@ -339,7 +357,7 @@ window.dataExtraccion = {
                     "Potencia del motor: 3 HP."
                 ]
             },
-            "22.jpg": {
+            "22.png": {
                 titulo: "LAVADORA DE CUADROS CON CALDERA A GAS",
                 modelo: "LAVG",
                 funcion: "Fundir la totalidad de la cera de los cuadros (marcos de panales), recuperándola mediante la aplicación combinada de fuerza centrífuga y del vapor de agua a presión suministrado por la Caldera.",
@@ -362,7 +380,7 @@ window.dataExtraccion = {
                     "Capacidad (mechero): 50.000 kCal."
                 ]
             },
-            "23.jpg": {
+            "23.png": {
                 titulo: "FUNDIDOR DE PELLETS",
                 modelo: "E080",
                 funcion: "Fundir opérculo prensado y lavar marcos y rejillas excluidoras.",
@@ -392,7 +410,7 @@ window.dataExtraccion = {
                     "Consumo de agua: 40 lts."
                 ]
             },
-            "24.jpg": {
+            "24.png": {
                 titulo: "BOMBA ELEVADORA DE MIEL (1 1/4\")",
                 modelo: "BEM114",
                 funcion: "Elevación de miel desde la fosa hasta el tanque decantador.",
@@ -411,10 +429,10 @@ window.dataExtraccion = {
                     "Dimensiones de boca: Ø 1 1/4 pulgadas."
                 ]
             }
-        };;
+        };
 
 window.dataExtraccionPequenos = {
-            "25.jpg": {
+            "25.png": {
                 titulo: "DESOPERCULADORA ESTÁNDAR",
                 modelo: "DAE STD",
                 funcion: "Cortar el opérculo excedente del panal para facilitar la salida de la miel contenida en su interior.",
@@ -430,7 +448,7 @@ window.dataExtraccionPequenos = {
                     "Control temperatura digital: 0 a 150 grados."
                 ]
             },
-            "26.jpg": {
+            "26.png": {
                 titulo: "CUCHILLO DESOPERCULADOR CON BATEA",
                 modelo: "CDB",
                 funcion: "Desopercular panales manualmente mediante cuchillo eléctrico en 'V' con batea de recolección de miel y opérculo.",
@@ -448,7 +466,7 @@ window.dataExtraccionPequenos = {
                     "Peso: 30 kg."
                 ]
             },
-            "27.jpg": {
+            "27.png": {
                 titulo: "PRENSA DE OPÉRCULO (CH)",
                 modelo: "PRCH",
                 funcion: "Tratamiento del opérculo para la separación de cera y miel, mediante compresión y sin aplicación de temperatura.",
@@ -464,7 +482,7 @@ window.dataExtraccionPequenos = {
                     "Capacidad de trabajo: hasta 150 cuadros/hora."
                 ]
             },
-            "28.jpg": {
+            "28.png": {
                 titulo: "EXTRACTOR DE 42 CUADROS LÍNEA ESTÁNDAR",
                 modelo: "E42STD",
                 funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -481,7 +499,7 @@ window.dataExtraccionPequenos = {
                     "Diámetro niple salida: 38,1 mm (1 1/2 pulgadas)."
                 ]
             },
-            "29.jpg": {
+            "29.png": {
                 titulo: "EXTRACTOR DE 20 CUADROS ESTÁNDAR",
                 modelo: "E20STD",
                 funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -500,7 +518,7 @@ window.dataExtraccionPequenos = {
                     "Diámetro niple salida: 38,1 mm (1 1/2 pulgadas)."
                 ]
             },
-            "30.jpg": {
+            "30.png": {
                 titulo: "EXTRACTOR DE 8 CUADROS ESTÁNDAR Y 12 DE MEDIA ALZA",
                 modelo: "E8-12STD",
                 funcion: "Extraer la miel de los panales por medio de la aplicación de fuerza centrífuga.",
@@ -519,7 +537,7 @@ window.dataExtraccionPequenos = {
                     "Diámetro niple salida: 38,1 mm (1 1/2 pulgadas)."
                 ]
             },
-            "31.jpg": {
+            "31.png": {
                 titulo: "BATEA DE DESOPERCULADO",
                 modelo: "BD",
                 funcion: "Recolectar el opérculo y la miel resultante del proceso de desoperculado manual.",
@@ -536,8 +554,8 @@ window.dataExtraccionPequenos = {
                     "Espesor patas y bastidor: 2,5 mm."
                 ]
             },
-            "32.jpg": {
-                titulo: "FUNDIDOR DE PELLETS",
+            "32.png": {
+                titulo: "FUNDIDOR DE PELLETS (PEQUEÑOS APICULTORES)",
                 modelo: "E080",
                 funcion: "Fundir opérculo prensado y lavar marcos y rejillas excluidoras.",
                 descripcionFuncionamiento: "El fundidor de pellets es una caja de doble pared que contiene agua. Mediante un mechero ubicado en la parte inferior, el agua se calienta generando vapor que ingresa por unos orificios a la parte interna donde se encuentra el opérculo prensado o los cuadros. Estos se encuentran en dos canastos de malla perforada, los cuales actúan de medio filtrante. La cera derretida sale por una válvula esférica hacia el separador por densidad, y de éste a los moldes para cera.",
@@ -556,17 +574,11 @@ window.dataExtraccionPequenos = {
                     "Purga agua: Llave esférica 1/2 pulgada.",
                     "Salida cera: Llave esférica 1 pulgada.",
                     "Volumen de agua: 20 a 25 litros.",
-                    "Capacidad de trabajo: 30 cuadros / 35 minutos.",
-                    "— DATOS REFERENCIALES PARA 110 KG DE OPÉRCULO FUNDIDO —",
-                    "Consumo de gas: 2,5 m³.",
-                    "Pellets: 110 kg.",
-                    "Cera: 80 kg.",
-                    "Borra: 30 kg.",
-                    "Tiempo de trabajo: 6 hs.",
-                    "Consumo de agua: 40 lts."
+                    "Capacidad de trabajo: 30 cuadros / 35 minutos."
                 ]
             },
-            "33.jpg": {
+            "33.png": {
+                imagenes: ["33.png", "33.1.png", "33.2.png"],
                 titulo: "DECANTADOR DE 50 KG",
                 modelo: "",
                 funcion: "",
@@ -574,7 +586,8 @@ window.dataExtraccionPequenos = {
                 descripcionEquipo: "",
                 especificacionesTecnicas: []
             },
-            "34.jpg": {
+            "34.png": {
+                imagenes: ["34.png", "34.1.png", "34.2.png"],
                 titulo: "DECANTADOR DE 600 KG",
                 modelo: "",
                 funcion: "",
@@ -582,4 +595,4 @@ window.dataExtraccionPequenos = {
                 descripcionEquipo: "",
                 especificacionesTecnicas: []
             }
-        };;
+        };

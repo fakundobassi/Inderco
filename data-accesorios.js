@@ -1,5 +1,5 @@
 window.dataAccesorios = {
-            "1.jpg": {
+            "1.png": {
                 titulo: "API LIFTER",
                 modelo: "APL",
                 funcion: "Transporte y elevación de cargas en el apiario con hasta 100 kg de capacidad.",
@@ -13,7 +13,7 @@ window.dataAccesorios = {
                     "Ruedas con cubiertas y cámaras."
                 ]
             },
-            "2.jpg": {
+            "2.png": {
                 titulo: "LAVA BOTAS Y MANOS COMBINADO",
                 modelo: "LBM",
                 funcion: "Higienización combinada de botas y manos en un único equipo.",
@@ -28,7 +28,7 @@ window.dataAccesorios = {
                     "Profundidad: 53 cm."
                 ]
             },
-            "3.jpg": {
+            "3.png": {
                 titulo: "CARRETILLA PARA TAMBORES",
                 modelo: "CTR",
                 funcion: "Transporte y manipulación de tambores con capacidad de hasta 700 kg.",
@@ -57,7 +57,7 @@ window.dataAccesorios = {
                     "Rango de temperatura: 0° - 110°C (se recomienda no superar los 40°C para el derretimiento de miel)."
                 ]
             },
-            "5.jpg": {
+            "5.png": {
                 titulo: "LAVA BOTAS",
                 modelo: "",
                 funcion: "",
@@ -65,7 +65,7 @@ window.dataAccesorios = {
                 descripcionEquipo: "",
                 especificacionesTecnicas: []
             },
-            "6.jpg": {
+            "6.png": {
                 titulo: "LAVA MANOS",
                 modelo: "",
                 funcion: "",
@@ -73,7 +73,7 @@ window.dataAccesorios = {
                 descripcionEquipo: "",
                 especificacionesTecnicas: []
             },
-            "7.jpg": {
+            "7.png": {
                 titulo: "DERRETIDOR PARA BALDE",
                 modelo: "DERT",
                 funcion: "Calentar la miel solidificada por enfriamiento ambiental, para facilitar su fraccionado y/o trasiego.",
@@ -95,7 +95,7 @@ window.dataAccesorios = {
                 descripcionEquipo: "",
                 especificacionesTecnicas: []
             },
-            "9.jpg": {
+            "9.png": {
                 titulo: "PEINE",
                 modelo: "",
                 funcion: "",
@@ -103,7 +103,7 @@ window.dataAccesorios = {
                 descripcionEquipo: "",
                 especificacionesTecnicas: []
             },
-            "10.jpg": {
+            "10.png": {
                 titulo: "GRIFO GUILLOTINA 1 1/2\" Y 2\" (PULGADAS)",
                 modelo: "",
                 funcion: "",
@@ -111,4 +111,4 @@ window.dataAccesorios = {
                 descripcionEquipo: "",
                 especificacionesTecnicas: []
             }
-        };;
+        };
